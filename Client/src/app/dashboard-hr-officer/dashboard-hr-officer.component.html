@@ -1,0 +1,1069 @@
+<!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script> -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Font Awesome --> 
+<!-- <link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  rel="stylesheet"
+/> -->
+<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+<!-- Main Menu -->
+<div style="display: flex;">
+  <div class="ten " style="width: 90%">
+    <h1>Service ressources humaines</h1>
+  
+  </div>
+  <div style="width: 10%">
+    <a   href="javascript:void(0);" (click)="showMainMenu()" >
+      <i class='bx bxs-dashboard dashboardBoxIcon ' ></i>
+    </a>  
+  </div>
+  
+</div>
+
+
+<c-row  *ngIf="showMenu">
+ 
+ 
+  <c-col cols="12" md="6" lg="4" class="mt-4 pt-2">
+    <div class="card service-wrapper rounded border-0 shadow p-4">
+      <div class="icon-container text-center  shadow rounded ">
+        
+          <svg  href="javascript:void(0)"  (click)="HidelMainMenu();toggleTable('employees')" class="icon-link" xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-person-lines-fill"  viewBox="0 0 24 24" width="9em"> <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1h-4zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2z"/> </svg>
+      
+      </div>
+      
+      <div class="content mt-4">
+        <h3 class="title">Gestion des employés</h3>
+        <ul>
+          <li><a  href="javascript:void(0)" >Liste des employés</a></li>
+          <li><a  href="javascript:void(0)" >Nouvel employé</a></li>
+        </ul>
+        <div class="mt-3">
+          <div class="big-icon h1 text-custom">
+            <span class="uim-svg" >
+              <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-person-lines-fill"  viewBox="0 0 24 24" width="1em"> <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1h-4zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2z"/> </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </c-col>
+  <c-col cols="12" md="6" lg="4" class="mt-4 pt-2">
+    <div class="card service-wrapper rounded border-0 shadow p-4">
+      <div class="icon-container text-center  shadow rounded ">
+
+ 
+        <svg href="javascript:void(0)"   class="icon-link"(click)="HidelMainMenu();toggleTable('ProdHoraire')"  xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-person-lines-fill"  viewBox="0 0 24 24" width="9em">  <path fill-rule="evenodd" d="M6 2a.5.5 0 0 1 .47.33L10 12.036l1.53-4.208A.5.5 0 0 1 12 7.5h3.5a.5.5 0 0 1 0 1h-3.15l-1.88 5.17a.5.5 0 0 1-.94 0L6 3.964 4.47 8.171A.5.5 0 0 1 4 8.5H.5a.5.5 0 0 1 0-1h3.15l1.88-5.17A.5.5 0 0 1 6 2Z"/> </svg>
+        
+      
+      </div>
+      
+      <div class="content mt-4">
+        <h3 class="title">Production horaire</h3>
+        <ul>
+          <li><a href="#">Consulter la production horaire</a></li>
+          <li><a href="#">Ajustement horaire</a></li>
+        </ul>
+        <div class="mt-3">
+          <div class="big-icon h1 text-custom">
+            <span class="uim-svg" >
+              <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-person-lines-fill"  viewBox="0 0 24 24" width="1em">  <path fill-rule="evenodd" d="M6 2a.5.5 0 0 1 .47.33L10 12.036l1.53-4.208A.5.5 0 0 1 12 7.5h3.5a.5.5 0 0 1 0 1h-3.15l-1.88 5.17a.5.5 0 0 1-.94 0L6 3.964 4.47 8.171A.5.5 0 0 1 4 8.5H.5a.5.5 0 0 1 0-1h3.15l1.88-5.17A.5.5 0 0 1 6 2Z"/> </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </c-col>
+  <c-col cols="12" md="6" lg="4" class="mt-4 pt-2">
+    <div class="card service-wrapper rounded border-0 shadow p-4">
+      <div class="icon-container text-center  shadow rounded ">
+  
+          <svg  href="javascript:void(0)"  (click)="HidelMainMenu();toggleTable('demandes');getDemandesByService()"  xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-person-lines-fill"  viewBox="0 0 24 24" width="9em">  <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/> <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/> </svg>
+      
+      </div>
+      
+      <div class="content mt-4">
+        <h3 class="title">Les demandes</h3>
+        <ul>
+          <li><a href="javascript:void(0);" (click)="HidelMainMenu();toggleTable('demandes');getDemandesByService()" >Demandes à traiter</a></li>
+          <li><a href="javascript:void(0);" (click)="HidelMainMenu();toggleTable('demandes');getDemandesByService()" >Demandes clôturées</a></li>
+        </ul>
+        <div class="mt-3">
+          <div class="big-icon h1 text-custom">
+            <span class="uim-svg" >
+              <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-person-lines-fill"  viewBox="0 0 24 24" width="1em"> <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/> <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/> </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </c-col>
+
+</c-row>
+
+<div *ngIf="showMenu" style="margin-top: 300px;"></div>
+
+<!-- Employés -->
+<div *ngIf="!showMenu && activeTable === 'employees'">
+  <c-row>
+    <div class="three">
+      <h1 >Employés</h1>
+    </div>
+  </c-row>
+  <c-row *ngIf="showEmployees"  style="width: 100%;"   >  
+   
+    <div>
+
+    <div  style="overflow-x: auto;" #employeeTable >
+   
+    <div #employeeTable >
+     
+      <div style="display: flex;">
+        <div style="width: 95%;">
+          <ng-container  *ngIf="selectedEmployee === null">
+            <c-dropdown direction="dropend" variant="btn-group" style="margin-right: 15px;">
+            
+              <button class="border-0 "  cDropdownToggle>
+                
+               
+                
+              </button>
+              {{ 
+                selectedFilter === 'searchTextName' ? 'Rechercher par Nom' :
+                selectedFilter === 'searchTextIdSage' ? 'Rechercher par Matricule' :
+                selectedFilter === 'searchTextCin' ? 'Rechercher par CIN' :
+                 'Rechercher par' }}
+              <ul cDropdownMenu>
+                <!--   <li><button cDropdownItem (click)="setSelectedFilter('searchTextPrenom')">Prénom</button></li> -->
+                <li><button cDropdownItem (click)="setSelectedFilter('searchTextName')">Nom</button></li>
+                <li><button cDropdownItem (click)="setSelectedFilter('searchTextIdSage')">Matricule</button></li>
+                <li><button cDropdownItem (click)="setSelectedFilter('searchTextCin')">CIN</button></li>
+              </ul>
+            </c-dropdown>
+            <!-- <input *ngIf="selectedFilter === 'searchTextPrenom'" type="text" [(ngModel)]="searchTextPrenom" id="searchTextPrenom" class="search-input" placeholder="Prénom"> -->
+            <input style="border-top: none; border-left: none; border-right: none; border-bottom: 1px solid #282827; background: none;" 
+            *ngIf="selectedFilter === 'searchTextName'" type="text" [(ngModel)]="searchTextName" id="searchTextName" class="search-input" >
+            <input style="border-top: none; border-left: none; border-right: none; border-bottom: 1px solid #282827; background: none;" 
+            *ngIf="selectedFilter === 'searchTextIdSage'" type="text" [(ngModel)]="searchTextIdSage" id="searchTextIdSage" class="search-input" >
+            <input style="border-top: none; border-left: none; border-right: none; border-bottom: 1px solid #282827; background: none;" 
+            *ngIf="selectedFilter === 'searchTextCin'" type="text" [(ngModel)]="searchTextCin" id="searchTextCin" class="search-input" >
+          </ng-container>
+  
+     
+            
+         
+        </div>
+
+    
+      
+  
+        <div style=" padding-bottom: 5px;">
+          <button   type="button" class="btn btn-outline-success "  (click)="showForm()" >
+              Nouveau
+        </button>
+        </div>
+      </div>
+     
+     
+      
+    </div>
+    <div class="table-responsive">
+      <table class="table project-list-table table-nowrap align-middle table-borderless" >
+        <thead>
+          <tr>
+            <th class="text-center" scope="col" *ngFor="let detail of details">
+              <span style="font-weight:bold; font-size: small;" >{{ detail }}</span>
+            </th >
+            <th class="text-center" scope="col">
+             
+            </th >
+          </tr>
+        </thead>
+        <tbody>
+         <ng-container *ngFor="let employee of employees | filter: searchTextName:searchTextIdSage :searchTextCin :searchTextUserName  ">
+          <tr > 
+            <td  class="text-center"><a href="javascript:void(0);" (click)="storeSelectedIdEmployee(employee.cin)">{{ employee.prenom }} {{ employee.nom }}</a></td>
+            <td class="text-center">{{ employee.idSage }}</td>
+            <td  class="text-center">{{ employee.cin }}</td>
+            <td class="text-center">{{ employee.adresseEmail }}</td>
+            <td class="text-center">{{ employee.tel }}</td>
+            <td class="text-center">{{ employee.statut }}</td>
+            <td class="text-center"></td>
+            <td class="text-center"></td>
+     
+            <td class="text-center">
+            <div style="display: flex;">
+              <div><button cButton color="primary" variant="ghost" shape="rounded-pill" ><svg cIcon name="cilPencil" ></svg></button> </div>
+              <div><button cButton color="danger" variant="ghost" shape="rounded-pill" (click)="deleteEmployee(employee.cin)" ><svg cIcon name="cilX" ></svg></button></div>
+            </div>
+            </td>
+          </tr>
+         
+         </ng-container>
+        
+        </tbody>
+      </table>
+    </div>
+    
+  
+  </div>
+  </div>
+
+ 
+  </c-row>
+
+
+  <!-- Formulaire ajout employés -->
+  <c-row *ngIf="showAddForm" >
+   
+    <div>
+    <div class="card">
+    <div class="card-body">
+      <div >
+        <a  href="javascript:void(0);" (click)="cancelForm()" ><i class='bx bx-arrow-back' style="font-size: 30px;" ></i></a>
+      </div>
+      <div style="margin-bottom: 20px;">
+          <h1 class="display-6" style="color: rgba(137, 43, 226, 0.766); font-size: xx-large;">Ajouter un employé</h1>  
+      </div>
+      <form >
+        <c-row  style="padding-bottom: 20px;">
+          <c-col [md]="4"  >
+            <label class="form-label" [ngClass]="{'active': nom}" for="nom">Nom</label>
+            <input class="form-control "  id="nom" name="nom" [(ngModel)]="nom" type="text"  />
+          </c-col>
+      
+          <c-col [md]="4" >
+            <label class="form-label" for="prenom"  [ngClass]="{'active': prenom}"  >Prénom</label>
+            <input class="form-control " id="prenom" name="prenom" [(ngModel)]="prenom" type="text" > 
+          <c-col/>
+      
+          </c-col>
+          <c-col [md]="3" >
+            <label class="form-label"  for="cin" [ngClass]="{'active': cin}">CIN</label>
+            <input class="form-control " id="cin" name="cin" [(ngModel)]="cin" type="text"  >
+      
+          </c-col>
+      
+        </c-row>
+      
+    <c-row  style="padding-bottom: 20px;">
+      <c-col [md]="3" >
+        <label class="form-label" for="dateNaissance">Date de naissance</label>
+        <input  class="form-control " id="dateNaissance" name="dateNaissance" [(ngModel)]="dateNaissance" type="date" />
+      </c-col>
+        
+          <c-col [md]="6" >
+            <label  class="form-label" for="genre">Genre</label>
+            <select class="form-control form-select" id="genre" name="genre" [(ngModel)]="genre"   >
+              <option class="input-option" value="Masculin">Homme</option>
+              <option class="input-option" value="Feminin">Femme</option>
+            </select>
+          </c-col>
+          <c-col [md]="3" >
+            <label  class="form-label" for="situationFamiliale">Situation Familiale</label>
+            <select class="form-control form-select"  id="situationFamiliale"name="situationFamiliale" [(ngModel)]="situationFamiliale">
+              <option value="Celibataire" >Célibataire</option>
+              <option  value="Marie">Marié(e)</option>
+              <option>Divorcé(e)</option>
+              <option>Veuf/Veuve</option> 
+            </select>
+          </c-col>
+    </c-row>
+    <c-row  style="padding-bottom: 20px;">
+      <c-col [xs]="8" >
+        <label  class="form-label" for="adresse" [ngClass]="{'active': adresse}">Adresse</label>
+        <input class="form-control " id="adresse"name="adresse" [(ngModel)]="adresse"  />
+      </c-col>
+      <c-col [md]="2" >
+        <label class="form-label" for="ville" [ngClass]="{'active': ville}">Ville</label>
+        <input class="form-control " id="ville"name="ville" [(ngModel)]="ville"  type="text"/>
+      </c-col>
+      <c-col [md]="2" >
+        <label class="form-label" for="codePostal" [ngClass]="{'active': codePostal}">Code postal</label>
+        <input class="form-control " id="codePostal"name="codePostal" [(ngModel)]="codePostal"  type="text"   />
+      </c-col>
+    </c-row>
+    <c-row  style="padding-bottom: 20px;">
+      <c-col [md]="6">
+        <label class="form-label" for="adresseEmail"  [ngClass]="{'active': adresseEmail}">Adresse Email</label>
+        <input class="form-control " id="adresseEmail"name="adresseEmail" [(ngModel)]="adresseEmail"  type="email" />
+
+      </c-col>
+
+      <c-col [md]="6" >
+        <label class="form-label" for="tel" [ngClass]="{'active': tel}">Tel</label>
+        <input class="form-control " id="tel"name="tel" [(ngModel)]="tel"  type="text"   />
+      </c-col>
+    </c-row>
+    <c-row  style="padding-bottom: 20px;">
+      
+      <c-col [md]="6" >
+        <label class="form-label" for="dateEntree" [ngClass]="{'active': dateEntree}">Date d'entrée</label>
+
+        <input class="form-control " id="dateEntree" name="dateEntree" [(ngModel)]="dateEntree" type="date" />
+      
+      </c-col>
+      <c-col [md]="6" >
+        <label class="form-label" for="idSage" [ngClass]="{'active': idSage}">Matricule Sage</label>
+        <input class="form-control " id="idSage" name="idSage" [(ngModel)]="idSage" type="text"   />
+        
+        
+      </c-col>
+
+    </c-row>
+    <c-row  style="padding-bottom: 20px;">
+      <c-col [md]="6" >
+        <label class="form-label" for="operation" [ngClass]="{'active': operation}">Opération</label>
+        <input class="form-control " id="operation" name="idSage" [(ngModel)]="operation" type="text"   />
+        
+        
+      </c-col>
+      <c-col [md]="6" >
+        <label class="form-label" for="poste" [ngClass]="{'active': poste}" >Poste</label>
+        <input class="form-control "  id="poste" name="idSage" [(ngModel)]="poste" type="text"  />
+        
+      
+      </c-col>
+    </c-row>
+
+      
+
+
+        
+
+      
+        <c-col [xs]="12"  class="d-grid gap-2 d-md-flex justify-content-md-end ng-star-inserted">
+          <button  type="button" class="btn btn-primary btn-rounded"  (click)="addEmployee()" type="submit" style="margin-right: 20px;">Ajouter</button>
+          <button  type="button" class="btn btn-outline-dark btn-rounded" (click)="cancelForm()">Annuler</button>
+        </c-col>
+      </form>
+    </div>
+
+    </div>
+    </div>
+  </c-row>
+
+ <!-- Details employés -->
+ <c-row *ngIf="showDetailsEmployee">
+  <div >
+    <a  href="javascript:void(0);" (click)="cancelEmployeeDetails()" ><i class='bx bx-arrow-back' style="font-size: 30px;" ></i></a>
+  </div>
+
+  
+    <div >
+      <div class="row gutters-sm">
+        
+        <div class="col-md-4 mb-3">
+          
+          <div class="card">
+            <div >
+              <h1 class="display-6 text-center"  style="color: rgba(137, 43, 226, 0.766); font-size: xx-large; margin-top: 20px;"> {{employee.prenom}} {{employee.nom}}</h1>  
+            </div>
+            <div class="card-body">
+              <div class="d-flex flex-column align-items-center text-center">
+              <img src="./assets/img/avatars/8.jpg" alt="Admin" class="rounded-circle" width="150">
+    
+              
+            
+              <div class="mt-3">
+                  <h4>{{employee.roleName}}</h4>
+          
+                 
+              </div>
+              </div>
+            </div>
+          </div>
+      
+        </div>
+        <div class="col-md-8">
+          <div id="profil" class="card mb-3">
+            <div class="card-body">
+              <div class=" d-grid gap-2 d-md-flex justify-content-md-end ng-star-inserted">
+                <a href="javascript:void(0);" (click)="showFormUpdate()" >
+                  <svg cIcon name="cilPencil" ></svg>
+                </a> 
+              </div>
+
+              <!-- Liste infos employés -->
+              <div *ngIf="infoList">
+                <div class="row">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">Matricule</h6>
+                  </div>
+                  <div class="col-sm-9 ">
+                    {{employee.idSage}}
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3">
+                  <h6 class="mb-0">CIN</h6>
+                  </div>
+                  <div class="col-sm-9 ">
+                    {{employee.cin}}
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                <div class="col-sm-3">
+                <h6 class="mb-0">Date de naissance</h6>
+                </div>
+                <div class="col-sm-9 ">
+                  {{employee.dateNaissance}}
+                </div>
+                </div>
+                <hr>
+                <div class="row">
+                <div class="col-sm-3">
+                <h6 class="mb-0">Situation familiale</h6>
+                </div>
+                <div class="col-sm-9 ">
+                  {{employee.situationFamiliale}}
+                </div>
+                </div>
+                <hr>
+                <div class="row">
+                <div class="col-sm-3">
+                <h6 class="mb-0">Addresse postale</h6>
+                </div>
+                <div class="col-sm-9 ">
+                  {{employee.adresse}}
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3">
+                  <h6 class="mb-0">Addresse mail</h6>
+                  </div>
+                  <div class="col-sm-9 ">
+                    {{employee.adresseEmail}}
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-3">
+                    <h6 class="mb-0">Tel.</h6>
+                    </div>
+                    <div class="col-sm-9 ">
+                      {{employee.tel}}
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                      <div class="col-sm-3">
+                      <h6 class="mb-0">Badge</h6>
+                      </div>
+                      <div class="col-sm-9 ">
+                        {{employee.badge}}
+                      </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-3">
+                    <h6 class="mb-0">Date d'entrée</h6>
+                    </div>
+                    <div class="col-sm-9 ">
+                      {{employee.dateEntree}}
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3">
+                  <h6 class="mb-0">Date de sortie</h6>
+                  </div>
+                  <div class="col-sm-9 ">
+                    {{employee.dateSortie}}
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                <div class="col-sm-3">
+                <h6 class="mb-0">Solde de congé</h6>
+                </div>
+                <div class="col-sm-9 ">
+                  {{employee.soldeConge}}
+                </div>
+                </div>
+                <hr>
+  
+                <div class="row">
+              <div class="col-sm-3">
+              <h6 class="mb-0">Poste</h6>
+              </div>
+              <div class="col-sm-9 ">
+           
+              </div>
+                </div>
+                <hr>
+  
+                <div class="row">
+                  <div class="col-sm-3">
+                  <h6 class="mb-0">Opération</h6>
+                  </div>
+                  <div class="col-sm-9 ">
+                    {{employee.operation}}
+                  </div>
+                </div>
+                <hr>
+              </div>
+
+               <!-- Form Update Employee -->
+              <div *ngIf="updateForm" >
+                <form >
+                  <c-row  style="padding-bottom: 20px;">
+                    <c-col [md]="4"  >
+                      <label class="form-label" [ngClass]="{'active': nom}" for="nom">Nom</label>
+                      <input class="form-control "  id="nom" name="nom" [(ngModel)]="nom" type="text"  />
+                    </c-col>
+                
+                    <c-col [md]="4" >
+                      <label class="form-label" for="prenom"  [ngClass]="{'active': prenom}"  >Prénom</label>
+                      <input class="form-control " id="prenom" name="prenom" [(ngModel)]="prenom" type="text" > 
+                    <c-col/>
+                
+                    </c-col>
+                    <c-col [md]="3" >
+                      <label class="form-label"  for="cin" [ngClass]="{'active': cin}">CIN</label>
+                      <input class="form-control " id="cin" name="cin" [(ngModel)]="cin" type="text"  >
+                
+                    </c-col>
+                
+                  </c-row>
+                
+              <c-row  style="padding-bottom: 20px;">
+                <c-col [md]="3" >
+                  <label class="form-label" for="dateNaissance">Date de naissance</label>
+                  <input  class="form-control " id="dateNaissance" name="dateNaissance" [(ngModel)]="dateNaissance" type="date" />
+                </c-col>
+                  
+                    <c-col [md]="6" >
+                      <label  class="form-label" for="genre">Genre</label>
+                      <select class="form-control form-select" id="genre" name="genre" [(ngModel)]="genre"   >
+                        <option class="input-option" value="Masculin">Homme</option>
+                        <option class="input-option" value="Feminin">Femme</option>
+                      </select>
+                    </c-col>
+                    <c-col [md]="3" >
+                      <label  class="form-label" for="situationFamiliale">Situation Familiale</label>
+                      <select class="form-control form-select"  id="situationFamiliale"name="situationFamiliale" [(ngModel)]="situationFamiliale">
+                        <option value="Celibataire" >Célibataire</option>
+                        <option  value="Marie">Marié(e)</option>
+                        <option>Divorcé(e)</option>
+                        <option>Veuf/Veuve</option> 
+                      </select>
+                    </c-col>
+              </c-row>
+              <c-row  style="padding-bottom: 20px;">
+                <c-col [xs]="8" >
+                  <label  class="form-label" for="adresse" [ngClass]="{'active': adresse}">Adresse</label>
+                  <input class="form-control " id="adresse"name="adresse" [(ngModel)]="adresse"  />
+                </c-col>
+                <c-col [md]="2" >
+                  <label class="form-label" for="ville" [ngClass]="{'active': ville}">Ville</label>
+                  <input class="form-control " id="ville"name="ville" [(ngModel)]="ville"  type="text"/>
+                </c-col>
+                <c-col [md]="2" >
+                  <label class="form-label" for="codePostal" [ngClass]="{'active': codePostal}">Code postal</label>
+                  <input class="form-control " id="codePostal"name="codePostal" [(ngModel)]="codePostal"  type="text"   />
+                </c-col>
+              </c-row>
+              <c-row  style="padding-bottom: 20px;">
+                <c-col [md]="6">
+                  <label class="form-label" for="adresseEmail"  [ngClass]="{'active': adresseEmail}">Adresse Email</label>
+                  <input class="form-control " id="adresseEmail"name="adresseEmail" [(ngModel)]="adresseEmail"  type="email" />
+          
+                </c-col>
+          
+                <c-col [md]="6" >
+                  <label class="form-label" for="tel" [ngClass]="{'active': tel}">Tel</label>
+                  <input class="form-control " id="tel"name="tel" [(ngModel)]="tel"  type="text"   />
+                </c-col>
+              </c-row>
+              <c-row  style="padding-bottom: 20px;">
+                
+                <c-col [md]="6" >
+                  <label class="form-label" for="dateEntree" [ngClass]="{'active': dateEntree}">Date d'entrée</label>
+          
+                  <input class="form-control " id="dateEntree" name="dateEntree" [(ngModel)]="dateEntree" type="date" />
+                
+                </c-col>
+                <c-col [md]="6" >
+                  <label class="form-label" for="idSage" [ngClass]="{'active': idSage}">Matricule Sage</label>
+                  <input class="form-control " id="idSage" name="idSage" [(ngModel)]="idSage" type="text"   />
+                  
+                  
+                </c-col>
+          
+              </c-row>
+              <c-row  style="padding-bottom: 20px;">
+                <c-col [md]="6" >
+                  <label class="form-label" for="operation" [ngClass]="{'active': operation}">Opération</label>
+                  <input class="form-control " id="operation" name="idSage" [(ngModel)]="operation" type="text"   />
+                  
+                  
+                </c-col>
+                <c-col [md]="6" >
+                  <label class="form-label" for="poste" [ngClass]="{'active': poste}" >Poste</label>
+                  <input class="form-control "  id="poste" name="idSage" [(ngModel)]="poste" type="text"  />
+                  
+                
+                </c-col>
+              </c-row>
+          
+                
+          
+          
+                  
+          
+                
+                  <c-col [xs]="12"  class="d-grid gap-2 d-md-flex justify-content-md-end ng-star-inserted">
+                    <button  type="button" class="btn btn-primary btn-rounded"  (click)="addEmployee()" type="submit" style="margin-right: 20px;">Mettre à jour</button>
+                    <button  type="button" class="btn btn-outline-dark btn-rounded" (click)="cancleFormUpdate()">Annuler</button>
+                  </c-col>
+                </form>
+              </div>
+                  
+             
+              
+          
+            </div>
+          </div>
+        
+        </div>
+      </div>
+    </div>
+  </c-row>
+  
+</div>
+
+
+<!-- Production Horaire -->
+<div *ngIf="!showMenu && activeTable === 'ProdHoraire'" >
+  <c-row  style="width: 100%;" >
+    <c-col>
+
+        <div  style="overflow-x: auto;" >
+          <h3 class="text-center">Production  horaire des employés</h3>
+          <!-- Rechercher Par  -->
+          <!-- <div>
+            <h3 class="text-center">Production  horaire des employés</h3>
+            <div style="display: flex;">
+              <div style="width: 95%;">
+                <ng-container  *ngIf="selectedEmployee === null">
+                  <c-dropdown direction="dropend" variant="btn-group">
+                  
+                    <button class="border-0 "  cButton color="dark"  variant="outline" 
+                    onmouseover="this.style.backgroundColor='#d6ebff'; this.style.color='#0868ff';"
+                    onmouseout="this.style.backgroundColor='#fff'; this.style.color='#4f5d73';" cDropdownToggle>
+                      <img src="https://i.ibb.co/7QvVcfx/icons8-find-user-male-24.png" >
+                     
+                      
+                    </button>
+                    {{ 
+                      selectedFilter === 'searchTextName' ? 'Rechercher par Nom' :
+                      selectedFilter === 'searchTextIdSage' ? 'Rechercher par Matricule' :
+                      selectedFilter === 'searchTextCin' ? 'Rechercher par CIN' :
+                       'Rechercher par' }}
+                    <ul cDropdownMenu>
+       
+                      <li><button cDropdownItem (click)="setSelectedFilter('searchTextName')">Nom</button></li>
+                      <li><button cDropdownItem (click)="setSelectedFilter('searchTextIdSage')">Matricule</button></li>
+                      <li><button cDropdownItem (click)="setSelectedFilter('searchTextCin')">CIN</button></li>
+                    </ul>
+                  </c-dropdown>
+                  
+                  <input *ngIf="selectedFilter === 'searchTextName'" type="text" [(ngModel)]="searchTextName" id="searchTextName" class="search-input" placeholder="Nom">
+                  <input *ngIf="selectedFilter === 'searchTextIdSage'" type="text" [(ngModel)]="searchTextIdSage" id="searchTextIdSage" class="search-input" placeholder="Matricule">
+                  <input *ngIf="selectedFilter === 'searchTextCin'" type="text" [(ngModel)]="searchTextCin" id="searchTextCin" class="search-input" placeholder="CIN">
+                </ng-container>
+              </div>
+    
+              <div style="width: 5%; padding-bottom: 5px;">
+                <button cButton   class="border-0 " shape="rounded-pill"variant="ghost"  cButton  variant="outline"   (click)="showForm()" 
+                onmouseover="this.style.backgroundColor='#d6ebff'; this.style.color='#0868ff';"
+                onmouseout="this.style.backgroundColor='#fff'; this.style.color='#4f5d73';" >
+                <img src="https://i.ibb.co/F8CbFrb/icons8-add-user-male-24.png" ></button>
+              </div>
+            </div>
+           
+            <div *ngIf="selectedEmployee != null" style =" width: 20%">
+              <button cButton  variant="ghost" (click)="redirectToAllEmployees()"> Tout les employés</button>
+            </div>
+            
+          </div> -->
+         
+      <div>
+           
+        <button style="margin-bottom:20px;" class="btn btn-outline-primary" (click)="exportToExcel()">Export to Excel</button>
+        <div>
+          <input type="date" style="margin-bottom:20px;" [(ngModel)]="filterStartDate" class="form-control"  placeholder="Start Date" />
+          <input type="date" style="margin-bottom:20px;" [(ngModel)]="filterEndDate" class="form-control" placeholder="End Date" />
+          <button class="btn btn-outline-primary"  style="margin-bottom:20px ;margin-right:10px;" (click)="filterTable()">Filter</button>
+          <button class="btn btn-outline-primary"  style="margin-bottom:20px;" (click)="clearFilter()">Clear Filter</button>
+        </div>
+      </div>
+      
+          <table id="prodTable" class="table project-list-table table-nowrap align-middle table-borderless"  >
+            <thead>
+              <tr>
+                <th  class="text-center" *ngFor="let detailLog of detailsLog; let first = first" [ngStyle]="{'width.px': first ? 80 : 'auto'}">
+                  <span class="header-text">{{ detailLog }}</span>
+                </th>
+                <th  class="text-center"></th>
+              </tr>
+            </thead>
+            <tbody>
+             <ng-container>
+              <!-- *ngFor="let employee of employees | filter: searchTextName:searchTextIdSage :searchTextCin :searchTextUserName  " -->
+              <tr *ngFor="let log of logs" > 
+                <td>{{ log.date }}</td>
+                <td>{{ log.operation}}</td>
+                <td>{{ log.idSage}} </td>
+                <td>{{ log.prenom}} {{ log.nom}}</td>
+                <td>{{ log.logStatus}}</td>
+                <td>{{ log.logOnTimeS1}}</td>
+                <td>{{ log.logOffTimeS1}}</td>
+                <td>{{ log.logOnTimeS2}}</td>
+                <td>{{ log.logOffTimeS2}}</td>
+                <td>{{ log.logDurationStr}}</td>
+                <td>{{ log.logType}}</td>
+                <td>{{ log.hybride}}</td>
+                <td>{{ log.refPlanningWeek}}</td>
+         
+  
+              
+                <td class="text-center">
+                <div style="display: flex;">
+                  <div><button cButton color="primary" variant="ghost" shape="rounded-pill" ><svg cIcon name="cilPencil" ></svg></button> </div>
+                  <div><button cButton color="danger" variant="ghost" shape="rounded-pill" ><svg cIcon name="cilX" ></svg></button></div>
+                </div>
+                </td>
+              </tr>
+              
+              
+            
+             </ng-container>
+            
+            </tbody>
+          </table> 
+     
+          
+          
+    
+        </div>
+  
+    </c-col>
+  </c-row>
+</div>
+
+<!-- Demandes Section -->
+<div *ngIf="!showMenu &&  activeTable === 'demandes' ">
+
+  <div >
+ 
+    <div class="mb-3 ">
+        <div class="three">
+          <h1 >Demandes</h1>
+        </div>
+        
+          
+    </div>
+    
+    <div class="col-lg-12"  *ngIf="MenuDemandes">
+        <div class>
+         
+            <div class="table-responsive">
+                <table class="table project-list-table table-nowrap align-middle table-borderless">
+                    <thead>
+                        <tr>
+                            <th class="text-center" scope="col"  *ngFor="let detail of detailsDemande">
+                              <span style="font-weight: bold; font-size: medium;">{{ detail }}</span>
+                            </th >
+                        
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <ng-container *ngFor="let demande of demandes" >  
+                             
+                            <tr > 
+                               <td class="text-center"><a href="javascript:void(0);" (click)="storeSelectedRefDemande(demande.refDemande)">{{demande.refDemande }}</a> </td>
+                               <td class="text-center">{{demande.prenomDeposant }} {{demande.nomDeposant }}</td>
+                               <td class="text-center">{{demande.service }}</td>
+                               <td class="text-center">{{demande.type }}</td>
+                               <td class="text-center">{{demande.objet }}</td>
+                               <td class="text-center"><span  [class]="getStatusBadgeClass(demande.statut)" >{{demande.statut}} </span></td>
+                               <td class="text-center">{{demande.dateDepot }}</td>
+                          
+                               
+                               <td class="text-center">
+                                <ul class="list-inline mb-0">
+                
+                                <li  *ngIf="demande.statut === 'En cours'" class="list-inline-item" (click)="storeSelectedRefDemande(demande.refDemande)">
+                                    <a href="javascript:void(0);">Traiter</a> 
+                                </li>
+                                <li  *ngIf="demande.statut !== 'En cours'" class="list-inline-item" (click)="storeSelectedRefDemande(demande.refDemande)">
+                                  <a href="javascript:void(0);">Détails</a> 
+                                </li>
+                              
+                              
+                               
+                                </ul>
+                                </td>
+                            </tr>
+                        
+                        </ng-container>
+                        
+                 
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+  
+  </div>
+<!-- Traitement demande -->
+<div *ngIf="!MenuDemandes" >
+
+
+
+   
+  <div class="container">
+      <div class="row">
+          <div class="col-xl-12">
+            
+               <!-- Details -->
+              <div class="card">
+                  <div class="card-body p-5">
+                      <div  >
+                      
+                          <div >
+                            <a  href="javascript:void(0);" (click)="mainMenuDemandes()" ><i class='bx bx-arrow-back' style="font-size: 30px;" ></i></a>
+                          </div>
+                          <div>
+                              <h1 class="display-6" style="color: rgba(137, 43, 226, 0.766); font-size: xx-large;">Détails</h1>  
+                          </div>
+                          <div>
+                              <div style="padding: 10px;"><strong>Réference</strong> : {{demande.refDemande}} </div>
+                              <div style="padding: 10px;"><strong>Nom</strong> :{{demande.nomDeposant}}  </div>
+                              <div style="padding: 10px;"><strong>Prénom</strong> :{{demande.prenomDeposant}}  </div>
+                          </div>
+                          <div *ngFor="let item of items">
+                              <div>
+                                <div style="padding: 10px;"><strong>{{ item.key }}</strong> :
+                                  {{ item.value }}
+                                 </div>
+                              </div>
+                          </div>
+                          <div style="padding: 10px;"><strong>Poste</strong> Formateur </div>
+                          <div style="padding: 10px;"><strong>Date d'entrée à TCC</strong> :20-12-2020 </div>
+
+                          
+                       
+                      </div>
+                      <div *ngIf="demande.statut !='Annulée'" class="d-grid gap-2 d-md-flex justify-content-md-start">
+                        <a href="javascript:void(0);" (click)="showRenduPdf()"><i class='bx bxs-file-pdf boxIconPdf' ></i></a>
+                      </div>
+                      <div *ngIf="demande.statut === 'En cours'" class="d-grid gap-2 d-md-flex justify-content-md-end">                    
+                        <button  class="btn btn-outline-primary me-md-2" type="button" (click)="toggleFormTraiter('show')">Traiter</button> 
+                      </div>
+                  </div>
+                
+              </div>
+
+              <!--Aperçu pdf -->
+              <div *ngIf="renduPdf" class="card">
+                
+                <div class="card-body p-5">
+                  <div style="margin-top:20px;" class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <a href="javascript:void(0)" (click)="HideRenduPdf()"><i class='bx bx-x FaIconExport'></i></a>
+                  </div>
+                  <h3 style="margin-bottom: 15px;">Aperçu de la demande:</h3>
+                  <div id="demandeResumeSample"  >
+                  
+                    <div style="border: 1px solid rgb(83, 80, 80); padding: 10px; display: flex;margin-bottom: 100px; ">
+                        
+                            <p style="width: 40%; ">Réference: {{demande.refDemande}}</p>
+                            
+                            <h4 style="width: 60%;">Objet : Attestation de travail </h4>
+                            <img   src="./assets/images/TccLogo.png" alt="logo" style="width: 50px; height: 50px; background-color: #ccc; border-radius: 50%;" class="ng-star-inserted">
+                    
+                    </div>
+  
+                    <div class="pdf" style="text-align: right;">
+                        <p style="margin: 0;">Tunis,le {{demande.dateDepot}}</p>
+                    </div>
+                    
+                    
+                    <div >
+                        <div style="padding: 10px;"><strong>Nom: </strong> {{demande.nomDeposant}}</div>
+                        <div style="padding: 10px;"><strong>Prénom: </strong> {{demande.prenomDeposant}}</div>
+                        <div *ngFor="let item of items">
+                            <div>
+                              <div style="padding: 10px;"><strong>{{ item.key }}</strong> :
+                                {{ item.value }}
+                               </div>
+                            </div>
+                        </div>
+                        <div style="padding: 10px;"><strong>Poste</strong> Formateur</div>
+                        <div style="padding: 10px;"><strong>Date d'entrée à TCC</strong> :20-12-2020</div>
+  
+                    </div>
+                    
+                   
+                   
+
+                  </div>
+                  <div style="margin-top:20px;" class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <a href="javascript:void(0)" (click)="exportPdf()"><i class='bx bx-export FaIconExport'></i></a>
+                  </div>
+                 
+                </div>
+                
+              </div>
+              <!-- Traiter -->
+              <div class="card">
+                  <div class="card-body p-5">
+                    <div *ngIf="demande.statut === 'En cours' && FormTraiter " >
+                      <label class="form-label" for="commentaireTraitement" ><strong>Commentaire de clôture :</strong></label>
+                      <textarea  class="form-control" id="commentaireTraitement" placeholder="Notez le commentaire du clôture" [(ngModel)]="commentaireTraitement"></textarea>
+                      
+                      <div class="d-grid gap-2 d-md-flex justify-content-md-end" style="padding-top: 15px;">
+                        <button (click)="toggleFormTraiter('hide')" class="btn btn-outline-secondary" type="button">Annuler</button>
+                        <button (click)="traiterDemande();mainMenuDemandes()"  class="btn btn-success me-md-2" type="button">Valider</button> 
+                    </div>
+                     
+                    </div>
+                    <div *ngIf="demande.statut === 'En cours' && !FormTraiter && !renduPdf" class="table-responsive">
+                      <table class="table project-list-table table-nowrap align-middle table-borderless">
+                          <thead>
+                              <tr>
+                                  <th class="text-center" scope="col" >
+                                    <span style="font-weight: bold; font-size: medium;">Statut</span>
+                                  </th >
+                                  <th class="text-center" scope="col" >
+                                      <span style="font-weight: bold; font-size: medium;">Date de dépôt</span>
+                                  </th >
+                                
+                              
+                              </tr>
+                          </thead>
+                          <tbody>        
+                                  <tr > 
+                                     <td class="text-center"><span  [class]="getStatusBadgeClass(demande.statut)" >{{demande.statut}} </span></td>
+                                     <td class="text-center ">{{demande.dateDepot}}</td>
+                                  </tr>
+                     
+                              
+                       
+                          </tbody>
+                      </table>
+                    </div>
+                    <div *ngIf="demande.statut === 'Traitée'  && !renduPdf" class="table-responsive">
+                      <table class="table project-list-table table-nowrap align-middle table-borderless">
+                          <thead>
+                              <tr>
+                                  <th class="text-center" scope="col" >
+                                    <span style="font-weight: bold; font-size: medium;">Statut</span>
+                                  </th >
+                                  <th class="text-center" scope="col" >
+                                      <span style="font-weight: bold; font-size: medium;">Date de dépôt</span>
+                                  </th >
+                                  <th class="text-center" scope="col" >
+                                      <span style="font-weight: bold; font-size: medium;">Date de clôture</span>
+                                  </th >
+                                   <th class="text-center" scope="col" >
+                                      <span style="font-weight: bold; font-size: medium;">Commentaire de clôture</span>
+                                  </th >
+                                  <th class="text-center" scope="col" >
+                                      <span style="font-weight: bold; font-size: medium;">Traité par</span>
+                                  </th >
+                              
+                              </tr>
+                          </thead>
+                          <tbody>        
+                                  <tr > 
+                                     <td class="text-center"><span  [class]="getStatusBadgeClass(demande.statut)" >{{demande.statut}} </span></td>
+                                     <td class="text-center ">{{demande.dateDepot}}</td>
+                                     <td class="text-center " >{{demande.dateTraitement}}</td>
+                                     <td class="text-center">{{demande.commentaireTraitement}}</td>
+                                    <td class="text-center">{{demande.prenomTraitant}} {{demande.nomTraitant}}</td>
+                                  </tr>
+                     
+                              
+                       
+                          </tbody>
+                      </table>
+                    </div>
+                    <div *ngIf="demande.statut === 'Annulée'" class="table-responsive">
+                      <table class="table project-list-table table-nowrap align-middle table-borderless">
+                          <thead>
+                              <tr>
+                                  <th class="text-center" scope="col" >
+                                    <span style="font-weight: bold; font-size: medium;">Statut</span>
+                                  </th >
+                                  <th class="text-center" scope="col" >
+                                      <span style="font-weight: bold; font-size: medium;">Date de dépôt</span>
+                                  </th >
+                                  <th class="text-center" scope="col" >
+                                      <span style="font-weight: bold; font-size: medium;">Date d'annulation</span>
+                                  </th >
+                              </tr>
+                          </thead>
+                          <tbody>
+  
+                                   
+                                  <tr > 
+                                     <td class="text-center"><span  [class]="getStatusBadgeClass(demande.statut)" >{{demande.statut}} </span></td>
+                                     <td class="text-center "> 18-05-2023 </td>
+                                     <td class="text-center"> 19-05-2023 </td>
+                                  </tr>
+                     
+                              
+                       
+                          </tbody>
+                      </table>
+                    </div>
+                       
+                  </div>
+
+                  
+              </div>
+            
+          </div>
+  
+      </div>
+      
+  </div>
+
+
+
+<!-- <div>
+<div>Nom:</div>
+<strong><div>Mireille</div></strong>
+</div>
+
+<div *ngFor="let item of items">
+<div>
+  <div>{{ item.key }}:</div>
+  <strong>
+    {{ item.value }}
+  </strong>
+</div>
+</div>
+<a>Traiter</a>
+<div class="mb-3">
+<label class="form-label" for="commentaireTraitement" >Motif</label>
+<textarea  class="form-control" id="commentaireTraitement" placeholder="Notez le commentaire du traitement" [(ngModel)]="commentaireTraitement"></textarea>
+<button class="btn btn-success" (click)="traiterDemande()">Valider</button>
+</div> -->
+
+</div>
+
+
+
+</div>

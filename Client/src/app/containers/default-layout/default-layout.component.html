@@ -1,0 +1,37 @@
+
+
+  <c-sidebar visible size="lg">
+  <c-card class="mb-4 shadow" color="light" style="height: 100vh;">
+    <c-sidebar-brand>
+      <img src="https://i.ibb.co/L1bv57q/TccLogo1.png" alt="logo" style="width: 50px; height: 50px; background-color: #ccc; border-radius: 50%;;" >
+  </c-sidebar-brand>
+  <div  style="display: flex; justify-content: center; margin-top:30px;">
+    <img  src="https://i.ibb.co/5Wzpy2p/My-TCC-Logo-lg.png" style="width: 150px; height: 53px">
+  </div>
+  <c-sidebar-nav [navItems]="navItems" dropdownMode="close">
+    <!-- <li *ngFor="let item of navItems" [class]="item.class" routerLinkActive="active">
+      <a *ngIf="item.name !== 'Mes demandes'" [class]="item.class" routerLinkActive="active" [routerLink]="item.url">{{ item.name }}</a>
+      <a *ngIf="item.name === 'Mes demandes'" [class]="['mes-demandes-menu-item', item.class].join(' ')" routerLinkActive="active">{{ item.name }}</a>
+    </li> -->
+  </c-sidebar-nav>
+  
+    <c-sidebar-toggler></c-sidebar-toggler>
+  </c-card>
+
+  </c-sidebar>
+
+
+
+<!--main-->
+<div class="wrapper d-flex flex-column min-vh-100 bg-light dark:bg-transparent">
+  <!--app-header-->
+  <app-default-header class="mb-4 d-print-none header header-sticky" position="sticky" sidebarId="sidebar"></app-default-header>
+  <!--app-body-->
+  <div class="body flex-grow-1 px-3">
+    <c-container breakpoint="lg" class="h-auto">
+      <router-outlet></router-outlet>
+    </c-container>
+  </div>
+  <!--app footer-->
+  <app-default-footer></app-default-footer>
+</div>

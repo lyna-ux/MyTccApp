@@ -1,0 +1,817 @@
+
+
+
+<title>bs4 Responsive Dashboard Menu Cards - Bootdey.com</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+<!-- Menu Principal -->
+<div class="container">
+<div class="row">
+
+    <!-- Service RH -->
+    <div class="col-lg-4 col-sm-8">
+
+    <div class="card-box bg-red" >
+    <div class="inner">
+    <h4> Service RH </h4>
+    </div>
+    <div class="icon">
+    <i class="fa fa-users" aria-hidden="true"></i>
+    </div>
+    <div  >
+        <a href="javascript:void(0);" class="card-box-footer" (click)="toggleDemandeService('Service RH')">Déposer une demande <i class="fa fa-arrow-circle-right"></i></a>
+    </div>
+
+    </div>
+
+    </div>
+
+        <!-- Service IT -->
+    <div class="col-lg-4 col-sm-8">
+    <div class="card-box bg-green">
+    <div class="inner">
+    <h4> Service IT </h4>
+
+
+
+    </div>
+    <div class="icon">
+        <i class="fa fa-laptop"></i>
+    </div>
+    <a href="javascript:void(0);"class="card-box-footer">Déposer une demande <i class="fa fa-arrow-circle-right"></i></a>
+    </div>
+    </div>
+
+    <!-- Production -->
+    <div class="col-lg-4 col-sm-8">
+    <div class="card-box bg-orange">
+    <div class="inner">
+    <h4> Production </h4>
+
+    </div>
+    <div class="icon">
+        <i class="fa fa-bar-chart" aria-hidden="true"></i>
+    </div>
+    <a href="#" class="card-box-footer">Déposer une demande <i class="fa fa-arrow-circle-right"></i></a>
+    </div>
+    </div>
+    </div>
+
+</div>
+
+  <!-- Liste des demandes -->
+ 
+    <div *ngIf="showDemandeList" class="row">
+    <div class="three">
+        <h1 >Mes demandes</h1>
+        <!-- <button class="btn btn-success" (click)="getDemandesByMatricule()">Afficher</button> -->
+    </div>
+    <div class="col-lg-12">
+        <div class>
+            <div class="table-responsive">
+                <table class="table project-list-table table-nowrap align-middle table-borderless">
+                    <thead>
+                        <tr>
+                            <th class="text-center" scope="col"  *ngFor="let detail of details">
+                              <span style="font-weight: bold; font-size: medium;">{{ detail }}</span>
+                            </th >
+                        
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <ng-container *ngFor="let demande of demandes" >  
+                             
+                            <tr > 
+                                <td class="text-center"><a href="javascript:void(0);" (click)="storeSelectedRefDemande(demande.refDemande)">{{demande.refDemande }}</a> </td>
+                               <td class="text-center">{{demande.service }}</td>
+                               <td class="text-center">{{demande.type }}</td>
+                               <td class="text-center">{{demande.objet }}</td>
+                               <td class="text-center"><span  [class]="getStatusBadgeClass(demande.statut)" >{{demande.statut}} </span></td>
+                               <td class="text-center">
+                                <ul class="list-inline mb-0">
+                                <li class="list-inline-item">
+                                <a href="javascript:void(0);" data-bs-toggle="tooltip" data-bs-placement="top" title="Modifier" class="px-2 text-primary"><i class="bx bx-pencil font-size-18"></i></a>
+                                </li> 
+                                <li class="list-inline-item">
+                                <a href="javascript:void(0);"(click)="editDemande(demande.refDemande )" data-bs-toggle="tooltip" data-bs-placement="top" title="Annuler" class="px-2 text-primary"><i class='bx bx-x boxIconF' ></i></a>
+                             
+                                </li>
+                            
+                               
+                               
+                               
+                                </ul>
+                                </td>
+                            </tr>
+                        </ng-container>
+                        
+                 
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    </div> 
+
+<!--Contenu -->
+<section class="h-100 "*ngIf="service === 'Service RH' && showSRHcontent" >
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <ol class="activity-checkout mb-0 px-4 mt-3">
+                            <li class="checkout-item">
+                            <div class="avatar checkout-icon p-1">
+                            <div class="avatar-title rounded-circle bg-primary">
+                            <i class="bx bxs-receipt text-white font-size-20"></i>
+                            </div>
+                            </div>
+                            
+                            <div class="feed-item-list">
+                                <div style="display: flex;">
+                                     <div style="width: 98%;"> <h5 class="font-size-14 mb-3">Slectionner le type de la demande</h5>
+                                    </div>
+                                    <div>
+                                    <a href="javascript:void(0);" (click)="closeSRHcontent()" > <i class='bx bxs-checkbox-minus boxIcon'></i></a>
+                                    </div>
+                                </div>
+                               
+
+                                <div class="row">
+                                <div class="col-lg-3 col-sm-6" (click)="toggleDemandeType('Documents administratifs')">
+                                <div data-bs-toggle="collapse" >
+                                <label class="card-radio-label">
+                                <input type="radio" name="pay-method" id="pay-methodoption1" class="card-radio-input">
+                                <span class="card-radio py-3 text-center text-truncate">
+                                <i class="bx bxs-receipt d-block h2 mb-3"></i>
+                                Documents adminsitratifs
+                                </span>
+                                </label>
+                                </div>
+                                </div>
+
+                                <div class="col-lg-3 col-sm-6"  (click)="toggleDemandeType('congé')">
+                                    <div data-bs-toggle="collapse" >
+                                    <label class="card-radio-label">
+                                    <input type="radio" name="pay-method" id="pay-methodoption1" class="card-radio-input">
+                                    <span class="card-radio py-3 text-center text-truncate">
+                                    <i class="bx bxs-sun d-block h2 mb-3"></i> 
+                                    Congé
+                                    </span>
+                                    </label>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-sm-6"  (click)="toggleDemandeType('paie')">
+                                    <div data-bs-toggle="collapse" >
+                                    <label class="card-radio-label">
+                                    <input type="radio" name="pay-method" id="pay-methodoption1" class="card-radio-input">
+                                    <span class="card-radio py-3 text-center text-truncate">
+                                    <i class="bx bx-money d-block h2 mb-3"></i>
+                                    Service paie
+                                    </span>
+                                    </label>
+                                    </div>
+                                </div>
+                            
+                                <div class="col-lg-3 col-sm-6"  (click)="toggleDemandeType('recrutement')">
+                                    <div data-bs-toggle="collapse" >
+                                    <label class="card-radio-label">
+                                    <input type="radio" name="pay-method" id="pay-methodoption1" class="card-radio-input">
+                                    <span class="card-radio py-3 text-center text-truncate">
+                                    <i class="bx bxs-briefcase d-block h2 mb-3"></i>
+                                    Recrutement
+                                    </span>
+                                    </label>
+                                    </div>
+                                </div>
+                            
+                                </div>
+                                <!-- Documents -->
+                                <div *ngIf="type === 'Documents administratifs'"  class="row d-flex justify-content-center mt-100 mb-100">
+                                            
+                                                    
+                                    <div class="col-lg-12">
+                                    
+                                    <div >
+                                        <ul class="list-style-none">
+                                            <li class="d-flex no-block card-body">
+                                                
+                                                <div>
+                                                    <a href="javascript:void(0);" class="m-b-0 font-medium p-0" data-abc="true">Attestation de travail</a>
+                                                    
+                                                </div>
+                                                <div class="ml-auto">
+                                                    <div class="tetx-right" >
+                                                        <a href="javascript:void(0);" style="margin-right: 10px;" ><i (click)=" OnclickeAttestationTravail()" class="fa fa-plus "></i></a>
+                                                        <a href="javascript:void(0);" ><i class="fa fa-eye"></i></a>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="d-flex no-block card-body">
+                                                
+                                                <div>
+                                                    <a href="#" class="m-b-0 font-medium p-0" data-abc="true" >Attestation de salaire</a>
+                                                
+                                                </div>
+                                                <div class="ml-auto">
+                                                    <div class="tetx-right" >
+                                                    <a href="#" style="margin-right: 10px;" ><i  class="fa fa-plus "></i></a>
+                                                    <a href="#" ><i class="fa fa-eye"></i></a>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="d-flex no-block card-body">
+                                                
+                                                <div>
+                                                    <a href="#" class="m-b-0 font-medium p-0" data-abc="true">Attestation de titularisation</a>
+                                                
+                                                </div>
+                                                <div class="ml-auto">
+                                                    <div class="tetx-right" >
+                                                    <a href="#" style="margin-right: 10px;" ><i class="fa fa-plus "></i></a>
+                                                    <a href="#" ><i class="fa fa-eye"></i></a>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="d-flex no-block card-body">
+                                                
+                                                <div>
+                                                    <a href="#" class="m-b-0 font-medium p-0" data-abc="true">Attestation de stage</a>
+                                                
+                                                </div>
+                                                <div class="ml-auto">
+                                                    <div class="tetx-right" >
+                                                    <a href="#" style="margin-right: 10px;" ><i class="fa fa-plus "></i></a>
+                                                    <a href="#" ><i class="fa fa-eye"></i></a>
+                                                    </div>
+
+                                                </div>
+                                                
+                                            </li>
+                                            <li class="d-flex no-block card-body">
+                                                
+                                                <div>
+                                                    <a href="#" class="m-b-0 font-medium p-0" data-abc="true">Registre de commerce</a>
+                                                
+                                                </div>
+                                                <div class="ml-auto">
+                                                    <div class="tetx-right" >
+                                                    <a href="#" style="margin-right: 10px;" ><i class="fa fa-plus "></i></a>
+                                                    <a href="#" ><i class="fa fa-eye"></i></a>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                                </div>
+                                <!-- Congé -->
+                                <div *ngIf="type === 'congé'" class="row d-flex justify-content-center mt-100 mb-100">
+                                            
+                                                    
+                                    <div class="col-lg-12">
+                                    
+                                    <div >
+                                        <ul class="list-style-none">
+                                            <li class="d-flex no-block card-body">
+                                                
+                                                <div>
+                                                    <a href="#" class="m-b-0 font-medium p-0" data-abc="true">Congé payé</a>
+                                                    
+                                                </div>
+                                                <div class="ml-auto">
+                                                    <div class="tetx-right" >
+                                                        <a href="#" style="margin-right: 10px;" ><i class="fa fa-plus "></i></a>
+                                                        <a href="#" ><i class="fa fa-eye"></i></a>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="d-flex no-block card-body">
+                                                
+                                                <div>
+                                                    <a href="#" class="m-b-0 font-medium p-0" data-abc="true">Congé sans solde</a>
+                                                
+                                                </div>
+                                                <div class="ml-auto">
+                                                    <div class="tetx-right" >
+                                                    <a href="#" style="margin-right: 10px;" ><i class="fa fa-plus "></i></a>
+                                                    <a href="#" ><i class="fa fa-eye"></i></a>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="d-flex no-block card-body">
+                                                
+                                                <div>
+                                                    <a href="#" class="m-b-0 font-medium p-0" data-abc="true">Congé Maladie</a>
+                                                
+                                                </div>
+                                                <div class="ml-auto">
+                                                    <div class="tetx-right" >
+                                                    <a href="#" style="margin-right: 10px;" ><i class="fa fa-plus "></i></a>
+                                                    <a href="#" ><i class="fa fa-eye"></i></a>
+                                                    </div>
+                                                </div>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+
+                                </div>
+                                </div>
+                                <!-- Paie -->
+                                <div *ngIf="type === 'paie'" class="row d-flex justify-content-center mt-100 mb-100">
+                                            
+                                                    
+                                        <div class="col-lg-12">
+                                        
+                                        <div >
+                                            <ul class="list-style-none">
+                                                <li class="d-flex no-block card-body">
+                                                    
+                                                    <div>
+                                                        <a href="#" class="m-b-0 font-medium p-0" data-abc="true">Avance</a>
+                                                        
+                                                    </div>
+                                                    <div class="ml-auto">
+                                                        <div class="tetx-right" >
+                                                            <a href="#" style="margin-right: 10px;" ><i class="fa fa-plus "></i></a>
+                                                            <a href="#" ><i class="fa fa-eye"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="d-flex no-block card-body">
+                                                    
+                                                    <div>
+                                                        <a href="#" class="m-b-0 font-medium p-0" data-abc="true">Prêt</a>
+                                                    
+                                                    </div>
+                                                    <div class="ml-auto">
+                                                        <div class="tetx-right" >
+                                                        <a href="#" style="margin-right: 10px;" ><i class="fa fa-plus "></i></a>
+                                                        <a href="#" ><i class="fa fa-eye"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="d-flex no-block card-body">
+                                                    
+                                                    <div>
+                                                        <a href="#" class="m-b-0 font-medium p-0" data-abc="true">Fiche de paie</a>
+                                                    
+                                                    </div>
+                                                    <div class="ml-auto">
+                                                        <div class="tetx-right" >
+                                                        <a href="#" style="margin-right: 10px;" ><i class="fa fa-plus "></i></a>
+                                                        <a href="#" ><i class="fa fa-eye"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                        
+                                            </ul>
+                                        </div>
+                        
+                                    </div>
+                                </div>
+                                <!-- recrutement -->
+                                <div *ngIf="type === 'recrutement'" class="row d-flex justify-content-center mt-100 mb-100">
+                                            
+                                                    
+                                    <div class="col-lg-12">
+                                    
+                                    <div >
+                                        <ul class="list-style-none">
+                                            <li class="d-flex no-block card-body">
+                                                
+                                                <div>
+                                                    <a href="#" class="m-b-0 font-medium p-0" data-abc="true">Fiche parainage</a>
+                                                    
+                                                </div>
+                                                <div class="ml-auto">
+                                                    <div class="tetx-right" >
+                                                        <a href="#" style="margin-right: 10px;" ><i class="fa fa-plus "></i></a>
+                                                        <a href="#" ><i class="fa fa-eye"></i></a>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            </div>
+                        
+                            <li *ngIf=" attestationTravail === true" class="checkout-item">
+                            <div class="avatar checkout-icon p-1">
+                            <div class="avatar-title rounded-circle bg-primary">
+                            <i class="bx bxs-truck text-white font-size-20"></i>
+                            </div>
+                            </div>
+                            <div class="feed-item-list">
+                            
+                                <h5 class="font-size-14 mb-3">Remplir la demande</h5>
+                                <div style=" margin-bottom: 50px;">
+                                    <h3 class="font-size-14 mb-3" style="text-align: center; ">Demande attestation de travail</h3>    
+                                </div>
+                                
+                            
+                                <form>
+                                    <div>
+                                    <div class="row">
+                                        <div class="col-lg-4">
+                                        <div class="mb-3">
+                                    
+        
+                                            <label class="form-label" for="cinDeposant" >Cin</label>
+                                                <input type="text" class="form-control " id="CIN"name="CIN"   value="{{currentUserCin}}"  />
+                                        </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                        <div class="mb-3">
+
+                                        <label class="form-label" for="DateEmission" >Date d'emission</label>
+                                        <input type="date" class="form-control" id="Date d'emission" placeholder="Date d'émission de votre CIN'">
+                                        </div>
+                                        </div>               
+                                        <div class="col-lg-4">
+                                        <div class="mb-4 mb-lg-0">
+                                        <label class="form-label"  for="TypeContrat" >Type de contrat</label>
+                                        <select class="form-control form-select" title="Type de contrat" id="Type de contrat">
+                                        <option value="CDD">CDD</option>
+                                        <option value="CDI">CDI</option>
+                                        <option value="à l'heure">à l'heure</option>
+                                        </select>
+                                        </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="form-label" for="motif" >Motif</label>
+                                        <textarea  class="form-control" id="Motif" placeholder="Précisez le motif de la demande" required></textarea>
+                                    </div>
+                            
+                                    </div>
+                                    <div class="col">
+                                        <div class="text-end mt-2 mt-sm-0">
+                                        <a  (click)="OnClickRecap()" class="btn btn-outline-primary">
+                                        <i class="mdi mdi-cart-outline me-1"></i> Suivant  </a>
+                                        </div>
+                                    </div> 
+                                    
+                                </form>
+                                    
+                            </div>
+                        
+                        
+                            </li>
+                            <li *ngIf="recap === true"  class="checkout-item">
+                            <h5 class="font-size-14 mb-3" >Visualiser le récapitulatif</h5>
+                                <div class="avatar checkout-icon p-1">
+                                <div class="avatar-title rounded-circle bg-primary">
+                                <i class="bx bxs-truck text-white font-size-20"></i>
+                                </div>
+                                </div>
+
+                                <!-- Recap demande -->
+                               
+                                
+                                <div class="card">
+                                    <div class="card-body p-5">
+                                        <div id="renduPdf1"  >
+                                            <div style="border: 1px solid rgb(83, 80, 80); padding: 10px; display: flex;margin-bottom: 100px; ">
+                                                
+                                                    <p style="width: 40%; ">Réference:</p>
+                                                    
+                                                    <h4 style="width: 60%;">Objet: {{typeDoc}}</h4>
+                                                    <img   src="./assets/images/TccLogo.png" alt="logo" style="width: 50px; height: 50px; background-color: #ccc; border-radius: 50%;" class="ng-star-inserted">
+                                            
+                                            </div>
+
+                                            <div class="pdf" style="text-align: right;">
+                                                <p style="margin: 0;">Tunis, {{date}}</p>
+                                            </div>
+                                            
+                                            
+                                            <div >
+                                                <div style="padding: 10px;"><strong>Nom</strong> : {{ currentUser.nom }}</div>
+                                                <div style="padding: 10px;"><strong>Prénom</strong> : {{ currentUser.prenom }}</div>
+                                                <div *ngFor="let item of formInputs | keyvalue">
+                                                    <div>
+                                                      <div style="padding: 10px;"><strong>{{ item.key }}</strong> :
+                                                        {{ item.value }}
+                                                       </div>
+                                                    </div>
+                                                </div>
+                                                <div style="padding: 10px;"><strong>Poste</strong> : Formateur</div>
+                                                <div style="padding: 10px;"><strong>Date d'entrée à TCC</strong> : 20-12-2020</div>
+
+                                            </div>
+                                            
+                                         
+                                         
+                                        </div>
+                                    </div> 
+                                </div>
+
+
+                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                    <button (click)="closeSRHcontent()" class="btn btn-outline-secondary" type="button">Annuler</button>
+                                    <button (click)="addDemande()"  class="btn btn-primary me-md-2" type="button">Valider</button> 
+                                </div>
+
+                                <div class="d-grid gap-2 d-md-flex justify-content-md-start faList">
+                                    
+                                </div>
+
+                                <div style="margin-top: 50px;" class="d-grid gap-2 d-md-flex justify-content-md-end faList">
+                                    <a href="javascript:void(0);" (click)="exportPdf('renduPdf1') "><i class='bx bxs-file-pdf boxIconPdf' style="margin-right: 700px;"></i></a>
+                                    <a href="javascript:void(0);"  (click)="closeSRHcontent()" class="faList"  type="button"><i class="fa fa-th-list" ></i> <span class="faList">  Liste des demandes</span></a>
+                                    
+                                </div>
+
+
+
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            
+
+                <div class="row my-4">
+            
+            
+                </div> 
+            </div>
+    
+        </div>
+        
+    </div>
+</section>
+   
+    
+  <!-- Details demande -->
+    <section  class="h-100 " *ngIf="showDemandeDetail">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                     <!-- Details -->
+                    <div class="card">
+                        <div class="card-body p-5">
+                            <div   >
+                                <div style="margin-bottom: 25px;">
+                                    <a  href="javascript:void(0);" (click)="MainMenu()"><i class='bx bx-arrow-back' style="font-size: 30px;" ></i></a>
+                                </div>
+                              
+                                
+                                <div>
+                                    
+                                    <h1 class="display-6" style="color: rgba(137, 43, 226, 0.766); font-size: xx-large;">Détails</h1>  
+                                   
+                                
+                                </div>
+                                <div>
+                                    <div style="padding: 10px;"><strong>Référence</strong> : {{demande.refDemande}}</div>
+                                    <div style="padding: 10px;"><strong>Nom</strong> : {{demande.nomDeposant}}</div>
+                                    <div style="padding: 10px;"><strong>Prénom</strong> : {{demande.prenomDeposant}}</div>
+                                </div>
+                                <div *ngFor="let item of items">
+                                    <div>
+                                      <div style="padding: 10px;"><strong>{{ item.key }}</strong> :
+                                        {{ item.value }}
+                                       </div>
+                                    </div>
+                                </div>
+
+                                
+
+                                
+                             
+                            </div>
+                            <div *ngIf="demande.statut ==='En cours'" class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                <a href="javascript:void(0);" (click)="showRenduPdf()"><i class='bx bxs-file-pdf boxIconPdf' ></i></a>
+                            </div>
+                        </div>
+                         <!--Aperçu pdf -->
+                        <div *ngIf="renduPdf" class="card">
+                        
+                        <div class="card-body p-5">
+                        <div id="renduPdf2"  >
+                            <h3 style="margin-bottom: 15px;">Aperçu de la demande:</h3>
+                            <div style="border: 1px solid rgb(83, 80, 80); padding: 10px; display: flex;margin-bottom: 100px; ">
+                                
+                                    <p style="width: 40%; ">Réference: {{demande.refDemande}}</p>
+                                    
+                                    <h4 style="width: 60%;">Objet : Attestation de travail </h4>
+                                    <img   src="./assets/images/TccLogo.png" alt="logo" style="width: 50px; height: 50px; background-color: #ccc; border-radius: 50%;" class="ng-star-inserted">
+                            
+                            </div>
+        
+                            <div class="pdf" style="text-align: right;">
+                                <p style="margin: 0;">Tunis, {{date}}</p>
+                            </div>
+                            
+                            
+                            <div >
+                                <div style="padding: 10px;"><strong>Nom: </strong> {{demande.nom}}</div>
+                                <div style="padding: 10px;"><strong>Prénom: </strong> {{demande.prenom}}</div>
+                                <div *ngFor="let item of items">
+                                    <div>
+                                    <div style="padding: 10px;"><strong>{{ item.key }}</strong> :
+                                        {{ item.value }}
+                                    </div>
+                                    </div>
+                                </div>
+                                <div style="padding: 10px;"><strong>Poste</strong> : Formateur</div>
+                                <div style="padding: 10px;"><strong>Date d'entrée à TCC</strong> :20-05-2020</div>
+        
+                            </div>
+                            
+                        
+                        
+
+                        </div>
+                        <div style="margin-top:20px;" class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <a href="javascript:void(0)" (click)="exportPdf('renduPdf2')"><i class='bx bx-export FaIconExport'></i></a>
+                        </div>
+                        </div>
+                        
+                        </div>
+                    </div>
+                    <!-- Avancement -->
+                    <div class="card">
+                        <div class="card-body p-5">
+
+                            <div>  
+                                <h1 class="display-6" style="color: rgba(137, 43, 226, 0.766); font-size: xx-large;">Avancement du traitement</h1>  
+                            </div>
+
+                            <div *ngIf="demande.statut === 'En cours'" class="table-responsive">
+                                <table class="table project-list-table table-nowrap align-middle table-borderless">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center" scope="col" >
+                                              <span style="font-weight: bold; font-size: medium;">Statut</span>
+                                            </th >
+                                            <th class="text-center" scope="col" >
+                                                <span style="font-weight: bold; font-size: medium;">Date de dépôt</span>
+                                            </th >
+                                        
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                             
+                                            <tr > 
+
+                                               <td class="text-center"><span  [class]="getStatusBadgeClass(demande.statut)" >{{demande.statut}} </span></td>
+                                               <td class="text-center  "> {{demande.dateDepot}}</td>
+                                            </tr>
+                               
+                                        
+                                 
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div *ngIf="demande.statut === 'Traitée'" class="table-responsive">
+                                <table class="table project-list-table table-nowrap align-middle table-borderless">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center" scope="col" >
+                                              <span style="font-weight: bold; font-size: medium;">Statut</span>
+                                            </th >
+                                            <th class="text-center" scope="col" >
+                                                <span style="font-weight: bold; font-size: medium;">Date de dépôt</span>
+                                            </th >
+                                            <th class="text-center" scope="col" >
+                                                <span style="font-weight: bold; font-size: medium;">Date de clôture</span>
+                                            </th >
+                                             <th class="text-center" scope="col" >
+                                                <span style="font-weight: bold; font-size: medium;">Commentaire de clôture</span>
+                                            </th >
+                                            <th class="text-center" scope="col" >
+                                                <span style="font-weight: bold; font-size: medium;">Traité par</span>
+                                            </th >
+                                        
+                                        </tr>
+                                    </thead>
+                                    <tbody>        
+                                            <tr > 
+                                               <td class="text-center"><span  [class]="getStatusBadgeClass(demande.statut)" >{{demande.statut}} </span></td>
+                                               <td class="text-center ">{{demande.dateDepot}}</td>
+                                               <td class="text-center " >{{demande.dateTraitement}}</td>
+                                               <td class="text-center">{{demande.commentaireTraitement}}</td>
+                                               <td class="text-center">{{demande.prenomTraitant}} {{demande.nomTraitant}}</td>
+                                            </tr>
+                               
+                                        
+                                 
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div *ngIf="demande.statut === 'Annulée'" class="table-responsive">
+                                <table class="table project-list-table table-nowrap align-middle table-borderless">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center" scope="col" >
+                                              <span style="font-weight: bold; font-size: medium;">Statut</span>
+                                            </th >
+                                            <th class="text-center" scope="col" >
+                                                <span style="font-weight: bold; font-size: medium;">Date de dépôt</span>
+                                            </th >
+                                            <th class="text-center" scope="col" >
+                                                <span style="font-weight: bold; font-size: medium;">Date d'annulation</span>
+                                            </th >
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                             
+                                            <tr > 
+                                               <td class="text-center"><span  [class]="getStatusBadgeClass(demande.statut)" >{{demande.statut}} </span></td>
+                                               <td class="text-center "> {{demande.dateDepot}} </td>
+                                               <td class="text-center"> {{date}} </td>
+                                            </tr>
+                               
+                                        
+                                 
+                                    </tbody>
+                                </table>
+                            </div>
+                        
+                        </div>
+                    </div>
+                  
+                </div>
+        
+            </div>
+            
+        </div>
+    </section>
+    
+
+   
+          
+ 
+
+<!-- Details demande -->
+
+        <!-- <div id="demandeResumeSample"  >
+            <div style="border: 1px solid rgb(83, 80, 80); padding: 10px; display: flex;margin-bottom: 100px; ">
+                
+                    <p style="width: 40%; ">Réference:</p>
+                    
+                    <h4 style="width: 60%;">Objet: {{typeDoc}}</h4>
+                    <img   src="./assets/images/TccLogo.png" alt="logo" style="width: 50px; height: 50px; background-color: #ccc; border-radius: 50%;" class="ng-star-inserted">
+            
+
+            </div>
+
+            <div class="pdf" style="text-align: right;">
+                <p style="margin: 0;">Tunis, {{date}}</p>
+            </div>
+            
+            
+            <div >
+                <div style="padding: 10px;"><strong>Nom</strong> : {{ currentUser.nom }}</div>
+                <div style="padding: 10px;"><strong>Prénom</strong> : {{ currentUser.prenom }}</div>
+                <div *ngFor="let item of items">
+                    <div>
+                      <div style="padding: 10px;"><strong>{{ item.key }}</strong> :
+                        {{ item.value }}
+                       </div>
+                    </div>
+                </div>
+                <div style="padding: 10px;"><strong>Poste</strong> : téléconseillère</div>
+                <div style="padding: 10px;"><strong>Date d'entrée à TCC</strong> : {{ currentUser.dateEntree }}</div>
+
+            </div>
+            
+         
+         
+        </div>
+  
+
+
+<!-- <div>
+    <div>Nom:</div>
+    <strong><div>Mireille</div></strong>
+ </div>
+
+   <div *ngFor="let item of items">
+     <div>
+       <div>{{ item.key }}:</div>
+       <strong>
+         {{ item.value }}
+       </strong>
+     </div>
+</div> -->
+
+
+<script src="html2pdf.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.bundle.min.js"></script>

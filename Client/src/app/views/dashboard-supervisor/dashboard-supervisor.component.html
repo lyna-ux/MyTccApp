@@ -1,0 +1,1023 @@
+<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+<div style="display: flex;">
+  <div class="ten " style="width: 90%">
+    <h1>Production</h1>
+  
+  </div>
+  <div style="width: 10%">
+    <a   href="javascript:void(0);" (click)="showMainMenu()" >
+      <i class='bx bxs-dashboard dashboardBoxIcon ' ></i>
+    </a>  
+  </div>
+  
+</div>
+<!-- Main -->
+<c-row  *ngIf="showMenu">
+ 
+ 
+  <c-col cols="12" md="6" lg="3" class="mt-3 pt-2">
+    <div class="card service-wrapper rounded border-0 shadow p-4">
+      <div class="icon-container text-center  shadow rounded ">
+        
+          <svg  href="javascript:void(0)" (click)="toggleTable('employees');HidelMainMenu()" class="icon-link" xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-person-lines-fill"  viewBox="0 0 24 24" width="9em"> <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1h-4zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2z"/> </svg>
+      
+      </div>
+      
+      <div class="content mt-4">
+        <h3 class="title">Employés</h3>
+        <ul>
+          <li><a  href="javascript:void(0)" >Liste des employés</a></li>
+          <li></li>
+         
+        </ul>
+        <div class="mt-3">
+          <div class="big-icon h1 text-custom">
+            <span class="uim-svg" >
+              <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-person-lines-fill"  viewBox="0 0 24 24" width="1em"> <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1h-4zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2z"/> </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </c-col>
+  <c-col cols="12" md="6" lg="3" class="mt-3 pt-2">
+    <div class="card service-wrapper rounded border-0 shadow p-4">
+      <div class="icon-container text-center  shadow rounded ">
+  
+          <svg  href="javascript:void(0)" (click)="toggleTable('planning');HidelMainMenu()" xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-person-lines-fill"  viewBox="0 0 24 24" width="09em"> 
+            <path d="M11,1 C11.5523,1 12,1.44772 12,2 L12,3 L13,3 C14.1046,3 15,3.89543 15,5 L15,13 C15,14.1046 14.1046,15 13,15 L3,15 C1.89543,15 1,14.1046 1,13 L1,5 C1,3.89543 1.89543,3 3,3 L4,3 L4,2 C4,1.44772 4.44772,1 5,1 C5.55228,1 6,1.44772 6,2 L6,3 L10,3 L10,2 C10,1.44772 10.4477,1 11,1 Z M4,5 L3,5 L3,13 L13,13 L13,5 L12,5 C12,5.55228 11.5523,6 11,6 C10.4477,6 10,5.55228 10,5 L6,5 C6,5.55228 5.55228,6 5,6 C4.44772,6 4,5.55228 4,5 Z M9.12102,7.29289 C9.51154,6.90237 10.1447,6.90237 10.5352,7.29289 C10.9258,7.68342 10.9258,8.31658 10.5352,8.70711 L7.70711,11.5352 C7.31658,11.9258 6.68342,11.9258 6.29289,11.5352 L5.29289,10.5352 C4.90237,10.1447 4.90237,9.51154 5.29289,9.12102 C5.68342,8.73049 6.31658,8.73049 6.70711,9.12102 L7,9.41391 L9.12102,7.29289 Z"/>
+          </svg>
+      </div>
+      
+      <div class="content mt-4">
+        <h3 class="title">Les plannings</h3>
+        <ul>
+          <li><a href="javascript:void(0);" >Liste de plannings</a></li>
+
+        </ul>
+        <div class="mt-3">
+          <div class="big-icon h1 text-custom">
+            <span class="uim-svg" >
+              <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-person-lines-fill"  viewBox="0 0 24 24" width="1em"> <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/> <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/> </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </c-col>
+  <c-col cols="12" md="6" lg="3" class="mt-3 pt-2">
+    <div class="card service-wrapper rounded border-0 shadow p-4">
+      <div class="icon-container text-center  shadow rounded ">
+
+ 
+        <svg href="javascript:void(0)"   (click)="toggleTable('ProdHoraire');HidelMainMenu()"class="icon-link"  xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-person-lines-fill"  viewBox="0 0 24 24" width="9em">  <path fill-rule="evenodd" d="M6 2a.5.5 0 0 1 .47.33L10 12.036l1.53-4.208A.5.5 0 0 1 12 7.5h3.5a.5.5 0 0 1 0 1h-3.15l-1.88 5.17a.5.5 0 0 1-.94 0L6 3.964 4.47 8.171A.5.5 0 0 1 4 8.5H.5a.5.5 0 0 1 0-1h3.15l1.88-5.17A.5.5 0 0 1 6 2Z"/> </svg>
+        
+      
+      </div>
+      
+      <div class="content mt-4">
+        <h4 class="title">Production horaire</h4>
+        <ul>
+          <li><a href="#">Export feuille d'heure</a></li>
+
+        </ul>
+        <div class="mt-3">
+          <div class="big-icon h1 text-custom">
+            <span class="uim-svg" >
+              <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-person-lines-fill"  viewBox="0 0 24 24" width="1em">  <path fill-rule="evenodd" d="M6 2a.5.5 0 0 1 .47.33L10 12.036l1.53-4.208A.5.5 0 0 1 12 7.5h3.5a.5.5 0 0 1 0 1h-3.15l-1.88 5.17a.5.5 0 0 1-.94 0L6 3.964 4.47 8.171A.5.5 0 0 1 4 8.5H.5a.5.5 0 0 1 0-1h3.15l1.88-5.17A.5.5 0 0 1 6 2Z"/> </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </c-col>
+  <c-col cols="12" md="6" lg="3" class="mt-3 pt-2">
+    <div class="card service-wrapper rounded border-0 shadow p-4">
+      <div class="icon-container text-center  shadow rounded ">
+
+ 
+        <svg  href="javascript:void(0)"  xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-person-lines-fill"  viewBox="0 0 24 24" width="9em">  <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/> <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/> </svg>
+        
+      
+      </div>
+      
+      <div class="content mt-4">
+        <h3 class="title">Demandes</h3>
+        <ul>
+          <li><a href="#">Demande en cours</a></li>
+
+        </ul>
+        <div class="mt-3">
+          <div class="big-icon h1 text-custom">
+            <span class="uim-svg" >
+              <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-person-lines-fill"  viewBox="0 0 24 24" width="1em">  <path fill-rule="evenodd" d="M6 2a.5.5 0 0 1 .47.33L10 12.036l1.53-4.208A.5.5 0 0 1 12 7.5h3.5a.5.5 0 0 1 0 1h-3.15l-1.88 5.17a.5.5 0 0 1-.94 0L6 3.964 4.47 8.171A.5.5 0 0 1 4 8.5H.5a.5.5 0 0 1 0-1h3.15l1.88-5.17A.5.5 0 0 1 6 2Z"/> </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </c-col>
+
+
+</c-row>
+
+
+
+
+<!-- Employee Button -->
+<!-- <c-row>
+  <c-col [sm]="3">
+    <c-card class=" shadow" style="margin-bottom: 20px  ; " >
+      <button class="border-0 "  cButton color="dark"  variant="outline"  (click)="toggleTable('employees')" 
+          onmouseover="this.style.backgroundColor='#d6ebff'; this.style.color='#0868ff';"
+          onmouseout="this.style.backgroundColor='#fff'; this.style.color='#4f5d73';" >
+          <img src="https://i.ibb.co/Vw24vNf/icons8-user-groups-48.png">
+          </button>
+  
+      <c-card-body class='justify-content-center text-center shadow'>
+        <a href="javascript:void(0)"style ="text-decoration: none;color: inherit;" (click)="toggleTable('employees')">
+        
+          <h5  cCardTitle>Employés</h5>
+        </a>
+      </c-card-body>
+    </c-card>
+  </c-col>  
+-->
+<!-- PLanning Button-->
+  <!-- <c-col [sm]="3">
+    <c-card class=" shadow" style="margin-bottom: 20px ; ">
+      <button class="border-0 "  cButton color="dark"  variant="outline"  (click)="toggleTable('ProdHoraire')" 
+          onmouseover="this.style.backgroundColor='#d6ebff'; this.style.color='#0868ff';"
+          onmouseout="this.style.backgroundColor='#fff'; this.style.color='#4f5d73';" >
+         <img src="https://i.ibb.co/SvkP9JJ/icons8-meeting-time-48.png" >
+          </button>
+  
+      <c-card-body class='justify-content-center text-center shadow'>
+        <a href="javascript:void(0)"style ="text-decoration: none;color: inherit;" >
+        
+          <h5  cCardTitle>Production horaire</h5>
+        </a>
+      </c-card-body>
+    </c-card>
+  </c-col>   -->
+
+<!-- Production Horaire Button-->
+  <!-- <c-col [sm]="3">
+  <c-card class=" shadow" style="margin-bottom: 20px ; ">
+    <button class="border-0 "  cButton color="dark"  variant="outline"  (click)="toggleTable('planning')" 
+        onmouseover="this.style.backgroundColor='#d6ebff'; this.style.color='#0868ff';"
+        onmouseout="this.style.backgroundColor='#fff'; this.style.color='#4f5d73';" >
+        <img src="https://i.ibb.co/kMRN4z5/icons8-signing-a-document-48.png" >
+        </button>
+  
+    <c-card-body class='justify-content-center text-center shadow'>
+      <a href="javascript:void(0)"style ="text-decoration: none;color: inherit;" >
+        
+        <h5  cCardTitle>Plannings</h5>
+      </a>
+    </c-card-body>
+  </c-card>
+  </c-col>  -->
+  
+  <!--Demandes Button-->
+  <!-- <c-col [sm]="3">
+    <c-card class=" shadow" style="margin-bottom: 20px ; ">
+      <button class="border-0 "  cButton color="dark"  variant="outline"  (click)="togglDemandes()" 
+          onmouseover="this.style.backgroundColor='#d6ebff'; this.style.color='#0868ff';"
+          onmouseout="this.style.backgroundColor='#fff'; this.style.color='#4f5d73';" >
+          <img src="https://i.ibb.co/3c19SpD/icons8-service-48.png" >
+          </button>
+    
+      <c-card-body class='justify-content-center text-center shadow'>
+        <a href="javascript:void(0)"style ="text-decoration: none;color: inherit;" (click)="togglDemandes()">
+        
+          <a href="javascript:void(0)"style ="text-decoration: none;color: inherit;" >
+  
+            <h5  cCardTitle>Demandes</h5>
+          </a>
+        </a>
+      </c-card-body>
+    </c-card>
+    </c-col> 
+  </c-row -->
+
+<!-- Employee -->
+<c-row *ngIf="!showMenu && activeTable === 'employees'">
+  <div class="three">
+    <h1 >Employés</h1>
+  </div>
+</c-row>
+<c-row  style="width: 100%;"   *ngIf="!showMenu && activeTable === 'employees'">
+  <c-col >
+    <div color="info" >
+
+<div>
+  <div style="display:flex;">
+    <div style =" width: 85%">
+      
+    </div>
+    
+ 
+    
+  </div>
+
+<div  style="overflow-x: auto;">
+ 
+  <div>
+
+    <div style="display: flex;">
+      <div style="width: 95%;">
+        <ng-container  *ngIf="selectedEmployee === null">
+          <c-dropdown direction="dropend" variant="btn-group">
+            <button cButton  variant="ghost" cDropdownToggle>
+              <svg cIcon name="cilZoom" ></svg>
+              <!-- selectedFilter === 'searchTextPrenom' ? 'Rechercher par Prénom' : -->
+              {{ 
+                selectedFilter === 'searchTextName' ? 'Rechercher par Nom' :
+                selectedFilter === 'searchTextIdSage' ? 'Rechercher par Matricule' :
+                selectedFilter === 'searchTextCin' ? 'Rechercher par CIN' :
+                 'Rechercher par' }}
+            </button>
+            <ul cDropdownMenu>
+              <!--   <li><button cDropdownItem (click)="setSelectedFilter('searchTextPrenom')">Prénom</button></li> -->
+              <li><button cDropdownItem (click)="setSelectedFilter('searchTextName')">Nom</button></li>
+              <li><button cDropdownItem (click)="setSelectedFilter('searchTextIdSage')">Matricule</button></li>
+              <li><button cDropdownItem (click)="setSelectedFilter('searchTextCin')">CIN</button></li>
+            </ul>
+          </c-dropdown>
+          <!-- <input *ngIf="selectedFilter === 'searchTextPrenom'" type="text" [(ngModel)]="searchTextPrenom" id="searchTextPrenom" class="search-input" placeholder="Prénom"> -->
+          <input *ngIf="selectedFilter === 'searchTextName'" type="text" [(ngModel)]="searchTextName" id="searchTextName" class="search-input" placeholder="Nom">
+          <input *ngIf="selectedFilter === 'searchTextIdSage'" type="text" [(ngModel)]="searchTextIdSage" id="searchTextIdSage" class="search-input" placeholder="Matricule">
+          <input *ngIf="selectedFilter === 'searchTextCin'" type="text" [(ngModel)]="searchTextCin" id="searchTextCin" class="search-input" placeholder="CIN">
+        </ng-container>
+      </div>
+
+     
+    </div>
+   
+    <div *ngIf="selectedEmployee != null" >
+      <a  href="javascript:void(0);" (click)="redirectToAllEmployees()" ><i class='bx bx-arrow-back' style="font-size: 30px;" ></i></a>
+    </div>
+    <div  *ngIf="selectedEmployee != null" style="margin-bottom: 20px;">
+          <h1 class="display-6" style="color: rgba(137, 43, 226, 0.766); font-size: xx-large;">Attribuer planning</h1>  
+    </div>
+    
+  </div>
+  
+  <table class="table project-list-table table-nowrap align-middle table-borderless">
+    <thead>
+      <tr>
+        <th cTableColor="info" class="text-center" *ngFor="let detail of details">
+          <span class="header-text">{{ detail }}</span>
+        </th>
+        <th cTableColor="info" class="text-center"></th>
+      </tr>
+    </thead>
+    <tbody>
+     <ng-container *ngFor="let employee of employees | filter: searchTextName:searchTextIdSage :searchTextCin :searchTextUserName  ">
+      <tr *ngIf="!selectedEmployee || selectedEmployee === employee"> 
+  
+        <td class="text-center">{{ employee.prenom }}</td>
+        <td class="text-center">{{ employee.nom }}</td>
+        <td class="text-center">{{ employee.cin }}</td>
+        <td class="text-center">{{ employee.idSage }}</td>
+        <td class="text-center">{{ employee.adresseEmail }}</td>
+        <td class="text-center">{{ employee.tel }}</td>
+     
+        <td class="text-center">
+
+        <div style="display: flex;">
+          <!-- *ngIf="!showPlanningUser && !employee.refPlanningWeek " -> cdt du premier boutton -->
+          <div><button  cButton color="success" variant="ghost" shape="rounded-pill"(click)="toggleAddPlanningUser(employee)"><svg cIcon name="cilPlus" ></svg></button></div>
+          <button *ngIf="showAddPlanningUser" cButton color="success" variant="ghost" shape="rounded-pill" (click)="AssignPlanning(employee.cin, selectedRefPlanning)"><svg cIcon name="cilCheckAlt" ></svg></button>
+          <div><button *ngIf="employee.refPlanningWeek"  cButton color="primary" variant="ghost" shape="rounded-pill" (click)="getPlanning(employee.refPlanningWeek);togglePlanningUser(employee)"> <svg cIcon name="cil-calendar" ></svg></button></div>
+        </div>
+        </td>
+      </tr>
+
+ 
+     </ng-container>
+    
+    </tbody>
+  </table>
+  <div>
+<!-- Add Planning to USER -->
+    <div color="light" *ngIf="showAddPlanningUser">
+      <div *ngIf="!showNewPlanningForm">
+      <div style="display: flex;  margin-bottom: 30px">
+        <div style=" margin-right: 30px">
+          <select  cSelect sizing="sm" [(ngModel)]="selectedRefPlanning" style="width: 200px;">
+            <option>Choisir un planning</option>
+            <option *ngFor="let refPlanning of refPlannings" [value]="refPlanning">{{ refPlanning }}</option>
+          </select>
+        </div>
+        <div>
+          <button  cButton color="info"  (click)="getPlanning(selectedRefPlanning)" >
+            Afficher
+          </button>
+        </div>
+      </div>
+      
+      <table class="table project-list-table table-nowrap align-middle table-borderless" *ngIf="showPlanning" >
+        <thead cTableColor="info">
+          <tr>
+            <th class="text-center"></th>
+            <th class="text-center" *ngFor="let day of days">{{ day }}</th>
+          </tr>
+        </thead>
+        <tbody>
+         
+            <tr>
+              <td  style="text-align: left;"><strong>Début S1</strong></td>
+              
+                <td class="text-center">
+                 {{ planning?.lundi?.heureDebut_S1 }}
+                </td>
+                <td class="text-center">
+                  {{ planning?.mardi?.heureDebut_S1 }}
+                 </td>
+                 <td class="text-center">
+                  {{ planning?.mercredi?.heureDebut_S1 }}
+                 </td>
+                 <td class="text-center">
+                  {{ planning?.jeudi?.heureDebut_S1 }}
+                 </td>
+                 <td class="text-center">
+                  {{ planning?.vendredi?.heureDebut_S1 }}
+                 </td>
+                 <td class="text-center">
+                  {{ planning?.samedi?.heureDebut_S1 }}
+                 </td>
+                 <td class="text-center">
+                  {{ planning?.dimanche?.heureDebut_S1 }}
+                 </td>
+              
+            </tr>
+            <tr>
+              <td  style="text-align: left;"><strong>Fin S1</strong></td>
+              
+                <td class="text-center">
+                 {{ planning?.lundi?.heureFin_S1 }}
+                </td>
+                <td class="text-center">
+                  {{ planning?.mardi?.heureFin_S1 }}
+                 </td>
+                 <td class="text-center">
+                  {{ planning?.mercredi?.heureFin_S1 }}
+                 </td>
+                 <td class="text-center">
+                  {{ planning?.jeudi?.heureFin_S1 }}
+                 </td>
+                 <td class="text-center">
+                  {{ planning?.vendredi?.heureFin_S1 }}
+                 </td>
+                 <td class="text-center">
+                  {{ planning?.samedi?.heureFin_S1}}
+                 </td>
+                 <td class="text-center">
+                  {{ planning?.dimanche?.heureFin_S1 }}
+                 </td>
+              
+            </tr>
+    
+            <tr>
+              <td  style="text-align: left;"><strong>Début S2</strong></td>
+              
+                <td class="text-center">
+                 {{ planning?.lundi?.heureDebut_S2 }}
+                </td>
+                <td class="text-center">
+                  {{ planning?.mardi?.heureDebut_S2 }}
+                 </td>
+                 <td class="text-center">
+                  {{ planning?.mercredi?.heureDebut_S2 }}
+                 </td>
+                 <td class="text-center">
+                  {{ planning?.jeudi?.heureDebut_S2}}
+                 </td>
+                 <td class="text-center">
+                  {{ planning?.vendredi?.heureDebut_S2}}
+                 </td>
+                 <td class="text-center">
+                  {{ planning?.samedi?.heureDebut_S2}}
+                 </td>
+                 <td class="text-center">
+                  {{ planning?.dimanche?.heureDebut_S2 }}
+                 </td>
+              
+            </tr>
+            <tr>
+              <td  style="text-align: left;"><strong>Fin S2</strong></td>
+              
+                <td class="text-center">
+                 {{ planning?.lundi?.heureFin_S2 }}
+                </td>
+                <td class="text-center">
+                  {{ planning?.mardi?.heureFin_S2 }}
+                 </td>
+                 <td class="text-center">
+                  {{ planning?.mercredi?.heureFin_S2 }}
+                 </td>
+                 <td class="text-center">
+                  {{ planning?.jeudi?.heureFin_S2}}
+                 </td>
+                 <td class="text-center">
+                  {{ planning?.vendredi?.heureFin_S2}}
+                 </td>
+                 <td class="text-center">
+                  {{ planning?.samedi?.heureFin_S2}}
+                 </td>
+                 <td class="text-center">
+                  {{ planning?.dimanche?.heureFin_S2 }}
+                 </td>
+              
+            </tr>
+    
+        </tbody>
+      </table> 
+      <button  class="btn btn-outline-secondary" color="success"    (click)="NewPlanningUserForm()">Créer un nouveau Planning</button>
+    </div>
+    
+    <div *ngIf="showNewPlanningForm">
+      <div style="display: flex;">
+        <div style="width: 90%;">
+          <h4 >Nouveau Planning</h4>
+        </div>
+        <div style="width: 10%;">
+         
+        </div>
+        </div>
+       
+      
+    <form [formGroup]="planningService.tableForm">
+        <div style="margin-bottom: 10px;">
+          <c-dropdown direction="dropend" variant="btn-group" color="info">
+            <button cButton cDropdownToggle id="day">{{ planningService.selectedDay || 'Selctionnez le/les jour(s)' }}</button>
+            <ul cDropdownMenu>
+              <li><button cDropdownItem [disabled]="true">Choisir un jour</button></li>
+              <li><button cDropdownItem (click)="planningService.selectDay('Tous')">Tous</button></li>
+              <!-- <li><button cDropdownItem (click)="planningService.selectDay('LundiVendredi')">Du Lundi au Vendredi</button></li> -->
+              <li *ngFor="let day of planningService.days">
+                <button cDropdownItem (click)="planningService.selectDay(day)">{{ day }}</button>
+              </li>
+            </ul>
+          </c-dropdown>
+     
+        </div>
+      
+        <div  >
+          
+            <input type="time" formControlName="Début_S1" cFormControl />
+            <span for="Début_S1" >Début séance 1</span>
+          
+      
+         
+            <input  type="time" formControlName="Fin_S1" class="form-control" />
+            <span for="Fin_S1" >Fin séance 1</span>
+        
+      
+         
+            <input type="time" formControlName="startTime2" class="form-control" />
+            <span for="startTime2" >Début séance 2</span>
+   
+            <input type="time" formControlName="endTime2" class="form-control" />
+            <span for="endTime2" >Fin séance 2</span>
+       
+
+            <input type="text" id="RefPlanningWeek" class="form-control" />
+            <span for="RefPlanningWeek" >Référence Planning</span>
+     
+        </div>
+        <button class="btn btn-outline-secondary" (click)="createTable(); addNewWeek()">Valider</button>
+          <button  class="btn btn-outline-secondary"   (click)="CancelNewPlanningUserForm()">Annuler</button>
+    </form>
+    </div>
+    <div *ngIf="showTable " color="light">
+      <table class="table project-list-table table-nowrap align-middle table-borderless">
+        <thead >
+          <tr>
+            <th class="text-center"></th>
+            <th class="text-center" *ngFor="let day of days">{{ day }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngFor="let timeSlot of timeSlots; let i = index;">
+            <tr>
+              <td style="text-align: left;"><strong>{{ timeSlot }}</strong></td>
+              <ng-container *ngFor="let day of days; let j = index;">
+                <td class="text-center">
+                  {{  tableData[day]?.[timeSlot]  }}
+                </td>
+              </ng-container>
+            </tr>
+          </ng-container>
+        </tbody>
+      </table>
+    
+     
+    </div >
+  </div >
+   
+
+    <!-- Show Planning User -->
+    <div *ngIf="showPlanningUser" color="info">
+      <table  class="table project-list-table table-nowrap align-middle table-borderless">
+        <thead cTableColor="info">
+          <tr>
+            <th class="text-center"></th>
+            <th class="text-center" *ngFor="let day of days">{{ day }}</th>
+          </tr>
+        </thead>
+        <tbody>
+         
+            <tr>
+              <td  style="text-align: left;"><strong>Début S1</strong></td>
+              
+                <td class="text-center">
+                 {{ planning?.lundi?.heureDebut_S1 }}
+                </td>
+                <td class="text-center">
+                  {{ planning?.mardi?.heureDebut_S1 }}
+                 </td>
+                 <td class="text-center">
+                  {{ planning?.mercredi?.heureDebut_S1 }}
+                 </td>
+                 <td class="text-center">
+                  {{ planning?.jeudi?.heureDebut_S1 }}
+                 </td>
+                 <td class="text-center">
+                  {{ planning?.vendredi?.heureDebut_S1 }}
+                 </td>
+                 <td class="text-center">
+                  {{ planning?.samedi?.heureDebut_S1 }}
+                 </td>
+                 <td class="text-center">
+                  {{ planning?.dimanche?.heureDebut_S1 }}
+                 </td>
+              
+            </tr>
+            <tr>
+              <td  style="text-align: left;"><strong>Fin S1</strong></td>
+              
+                <td class="text-center">
+                 {{ planning?.lundi?.heureFin_S1 }}
+                </td>
+                <td class="text-center">
+                  {{ planning?.mardi?.heureFin_S1 }}
+                 </td>
+                 <td class="text-center">
+                  {{ planning?.mercredi?.heureFin_S1 }}
+                 </td>
+                 <td class="text-center">
+                  {{ planning?.jeudi?.heureFin_S1 }}
+                 </td>
+                 <td class="text-center">
+                  {{ planning?.vendredi?.heureFin_S1 }}
+                 </td>
+                 <td class="text-center">
+                  {{ planning?.samedi?.heureFin_S1}}
+                 </td>
+                 <td class="text-center">
+                  {{ planning?.dimanche?.heureFin_S1 }}
+                 </td>
+              
+            </tr>
+  
+            <tr>
+              <td  style="text-align: left;"><strong>Début S2</strong></td>
+              
+                <td class="text-center">
+                 {{ planning?.lundi?.heureDebut_S2 }}
+                </td>
+                <td class="text-center">
+                  {{ planning?.mardi?.heureDebut_S2 }}
+                 </td>
+                 <td class="text-center">
+                  {{ planning?.mercredi?.heureDebut_S2 }}
+                 </td>
+                 <td class="text-center">
+                  {{ planning?.jeudi?.heureDebut_S2}}
+                 </td>
+                 <td class="text-center">
+                  {{ planning?.vendredi?.heureDebut_S2}}
+                 </td>
+                 <td class="text-center">
+                  {{ planning?.samedi?.heureDebut_S2}}
+                 </td>
+                 <td class="text-center">
+                  {{ planning?.dimanche?.heureDebut_S2 }}
+                 </td>
+              
+            </tr>
+            <tr>
+              <td  style="text-align: left;"><strong>Fin S2</strong></td>
+              
+                <td class="text-center">
+                 {{ planning?.lundi?.heureFin_S2 }}
+                </td>
+                <td class="text-center">
+                  {{ planning?.mardi?.heureFin_S2 }}
+                 </td>
+                 <td class="text-center">
+                  {{ planning?.mercredi?.heureFin_S2 }}
+                 </td>
+                 <td class="text-center">
+                  {{ planning?.jeudi?.heureFin_S2}}
+                 </td>
+                 <td class="text-center">
+                  {{ planning?.vendredi?.heureFin_S2}}
+                 </td>
+                 <td class="text-center">
+                  {{ planning?.samedi?.heureFin_S2}}
+                 </td>
+                 <td class="text-center">
+                  {{ planning?.dimanche?.heureFin_S2 }}
+                 </td>
+              
+            </tr>
+  
+        </tbody>
+      </table>
+    </div >
+  </div>
+  
+</div>
+</div>
+</div>
+  </c-col>
+</c-row>
+
+
+<!-- PLanning -->
+<c-row *ngIf="!showMenu && activeTable === 'planning'">
+  <div class="three">
+    <h1 >Planning</h1>
+  </div>
+</c-row>
+<div color="info" *ngIf=" !showMenu && activeTable === 'planning'">
+  <select [(ngModel)]="selectedRefPlanning">
+    <option *ngFor="let refPlanning of refPlannings" [value]="refPlanning">{{ refPlanning }}</option>
+  </select>
+  
+  <button class="btn btn-outline-secondary" (click)="getPlanning(selectedRefPlanning)">
+    Afficher le Planning
+  </button   >
+  <table  class="table project-list-table table-nowrap align-middle table-borderless">
+    <thead cTableColor="info">
+      <tr>
+        <th class="text-center"></th>
+        <th class="text-center" *ngFor="let day of days">{{ day }}</th>
+      </tr>
+    </thead>
+    <tbody>
+     
+        <tr>
+          <td  style="text-align: left;"><strong>Début S1</strong></td>
+          
+            <td class="text-center">
+             {{ planning?.lundi?.heureDebut_S1 }}
+            </td>
+            <td class="text-center">
+              {{ planning?.mardi?.heureDebut_S1 }}
+             </td>
+             <td class="text-center">
+              {{ planning?.mercredi?.heureDebut_S1 }}
+             </td>
+             <td class="text-center">
+              {{ planning?.jeudi?.heureDebut_S1 }}
+             </td>
+             <td class="text-center">
+              {{ planning?.vendredi?.heureDebut_S1 }}
+             </td>
+             <td class="text-center">
+              {{ planning?.samedi?.heureDebut_S1 }}
+             </td>
+             <td class="text-center">
+              {{ planning?.dimanche?.heureDebut_S1 }}
+             </td>
+          
+        </tr>
+        <tr>
+          <td  style="text-align: left;"><strong>Fin S1</strong></td>
+          
+            <td class="text-center">
+             {{ planning?.lundi?.heureFin_S1 }}
+            </td>
+            <td class="text-center">
+              {{ planning?.mardi?.heureFin_S1 }}
+             </td>
+             <td class="text-center">
+              {{ planning?.mercredi?.heureFin_S1 }}
+             </td>
+             <td class="text-center">
+              {{ planning?.jeudi?.heureFin_S1 }}
+             </td>
+             <td class="text-center">
+              {{ planning?.vendredi?.heureFin_S1 }}
+             </td>
+             <td class="text-center">
+              {{ planning?.samedi?.heureFin_S1}}
+             </td>
+             <td class="text-center">
+              {{ planning?.dimanche?.heureFin_S1 }}
+             </td>
+          
+        </tr>
+
+        <tr>
+          <td  style="text-align: left;"><strong>Début S2</strong></td>
+          
+            <td class="text-center">
+             {{ planning?.lundi?.heureDebut_S2 }}
+            </td>
+            <td class="text-center">
+              {{ planning?.mardi?.heureDebut_S2 }}
+             </td>
+             <td class="text-center">
+              {{ planning?.mercredi?.heureDebut_S2 }}
+             </td>
+             <td class="text-center">
+              {{ planning?.jeudi?.heureDebut_S2}}
+             </td>
+             <td class="text-center">
+              {{ planning?.vendredi?.heureDebut_S2}}
+             </td>
+             <td class="text-center">
+              {{ planning?.samedi?.heureDebut_S2}}
+             </td>
+             <td class="text-center">
+              {{ planning?.dimanche?.heureDebut_S2 }}
+             </td>
+          
+        </tr>
+        <tr>
+          <td  style="text-align: left;"><strong>Fin S2</strong></td>
+          
+            <td class="text-center">
+             {{ planning?.lundi?.heureFin_S2 }}
+            </td>
+            <td class="text-center">
+              {{ planning?.mardi?.heureFin_S2 }}
+             </td>
+             <td class="text-center">
+              {{ planning?.mercredi?.heureFin_S2 }}
+             </td>
+             <td class="text-center">
+              {{ planning?.jeudi?.heureFin_S2}}
+             </td>
+             <td class="text-center">
+              {{ planning?.vendredi?.heureFin_S2}}
+             </td>
+             <td class="text-center">
+              {{ planning?.samedi?.heureFin_S2}}
+             </td>
+             <td class="text-center">
+              {{ planning?.dimanche?.heureFin_S2 }}
+             </td>
+          
+        </tr>
+
+    </tbody>
+  </table>
+<form [formGroup]="planningService.tableForm">
+    <div style="margin-bottom: 10px;">
+      <c-dropdown direction="dropend" variant="btn-group" color="info">
+        <button class="btn btn-outline-secondary" cDropdownToggle id="day">{{ planningService.selectedDay || 'Selctionnez le/les jour(s)' }}</button>
+        <ul cDropdownMenu>
+          <li><button cDropdownItem [disabled]="true">Choisir un jour</button></li>
+          <li><button cDropdownItem (click)="planningService.selectDay('Tous')">Tous</button></li>
+          <!-- <li><button cDropdownItem (click)="planningService.selectDay('Du Lundi au Vendredi')">Du Lundi au Vendredi</button></li> -->
+          <li *ngFor="let day of planningService.days">
+            <!-- <button cDropdownItem (click)="planningService.selectDay(day)">{{ day }}</button> -->
+            <div  class="form-check" >
+              <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+              <label class="form-check-label" for="flexCheckDefault">
+                <button cDropdownItem (click)="planningService.selectDay(day)" >{{ day }}</button>
+              </label>
+              
+            </div>
+          </li>
+        </ul>
+      </c-dropdown>
+ 
+    </div>
+  
+    <div class="input-groups-container" style="display: flex;">
+      <c-input-group style="margin-right: 10px;">
+        <input type="time" formControlName="Début_S1" cFormControl />
+        <span for="Début_S1" cInputGroupText>Début séance 1</span>
+      </c-input-group>
+  
+      <c-input-group style="margin-right: 10px;">
+        <input type="time" formControlName="Fin_S1" cFormControl />
+        <span for="Fin_S1" cInputGroupText>Fin séance 1</span>
+      </c-input-group>
+  
+      <c-input-group style="margin-right: 10px;">
+        <input type="time" formControlName="startTime2" cFormControl />
+        <span for="startTime2" cInputGroupText>Début séance 2</span>
+      </c-input-group>
+  
+      <c-input-group style="margin-right: 10px;">
+        <input type="time" formControlName="endTime2" cFormControl />
+        <span for="endTime2" cInputGroupText>Fin séance 2</span>
+      </c-input-group>
+      <c-input-group style="margin-right: 10px;width: 300px;">
+        <input type="text" id="RefPlanningWeek" cFormControl />
+        <span for="RefPlanningWeek" cInputGroupText>Référence Planning</span>
+      </c-input-group>
+  
+      <button class="btn btn-outline-secondary" (click)="createTable(); addNewWeek()">Valider</button>
+    </div>
+  </form>
+</div >
+
+<!-- Production Horaire -->
+<c-row *ngIf="!showMenu && activeTable === 'ProdHoraire'">
+  <div class="three">
+    <h1 >Production horaire</h1>
+  </div>
+</c-row>
+<c-row  style="width: 100%;"  *ngIf=" !showMenu && activeTable === 'ProdHoraire'">
+  <c-col>
+
+      <div  style="overflow-x: auto;" >
+      
+        <!-- Rechercher Par  -->
+        <!-- <div>
+          <h3 class="text-center">Production  horaire des employés</h3>
+          <div style="display: flex;">
+            <div style="width: 95%;">
+              <ng-container  *ngIf="selectedEmployee === null">
+                <c-dropdown direction="dropend" variant="btn-group">
+                
+                  <button class="border-0 "  cButton color="dark"  variant="outline" 
+                  onmouseover="this.style.backgroundColor='#d6ebff'; this.style.color='#0868ff';"
+                  onmouseout="this.style.backgroundColor='#fff'; this.style.color='#4f5d73';" cDropdownToggle>
+                    <img src="https://i.ibb.co/7QvVcfx/icons8-find-user-male-24.png" >
+                   
+                    
+                  </button>
+                  {{ 
+                    selectedFilter === 'searchTextName' ? 'Rechercher par Nom' :
+                    selectedFilter === 'searchTextIdSage' ? 'Rechercher par Matricule' :
+                    selectedFilter === 'searchTextCin' ? 'Rechercher par CIN' :
+                     'Rechercher par' }}
+                  <ul cDropdownMenu>
+     
+                    <li><button cDropdownItem (click)="setSelectedFilter('searchTextName')">Nom</button></li>
+                    <li><button cDropdownItem (click)="setSelectedFilter('searchTextIdSage')">Matricule</button></li>
+                    <li><button cDropdownItem (click)="setSelectedFilter('searchTextCin')">CIN</button></li>
+                  </ul>
+                </c-dropdown>
+                
+                <input *ngIf="selectedFilter === 'searchTextName'" type="text" [(ngModel)]="searchTextName" id="searchTextName" class="search-input" placeholder="Nom">
+                <input *ngIf="selectedFilter === 'searchTextIdSage'" type="text" [(ngModel)]="searchTextIdSage" id="searchTextIdSage" class="search-input" placeholder="Matricule">
+                <input *ngIf="selectedFilter === 'searchTextCin'" type="text" [(ngModel)]="searchTextCin" id="searchTextCin" class="search-input" placeholder="CIN">
+              </ng-container>
+            </div>
+  
+            <div style="width: 5%; padding-bottom: 5px;">
+              <button cButton   class="border-0 " shape="rounded-pill"variant="ghost"  cButton  variant="outline"   (click)="showForm()" 
+              onmouseover="this.style.backgroundColor='#d6ebff'; this.style.color='#0868ff';"
+              onmouseout="this.style.backgroundColor='#fff'; this.style.color='#4f5d73';" >
+              <img src="https://i.ibb.co/F8CbFrb/icons8-add-user-male-24.png" ></button>
+            </div>
+          </div>
+         
+          <div *ngIf="selectedEmployee != null" style =" width: 20%">
+            <button cButton  variant="ghost" (click)="redirectToAllEmployees()"> Tout les employés</button>
+          </div>
+          
+        </div> -->
+
+      <div>
+           
+        <button style="margin-bottom:20px;" class="btn btn-outline-primary" (click)="exportToExcel()">Export to Excel</button>
+        <div>
+          <input type="date" style="margin-bottom:20px;" [(ngModel)]="filterStartDate" class="form-control"  placeholder="Start Date" />
+          <input type="date" style="margin-bottom:20px;" [(ngModel)]="filterEndDate" class="form-control" placeholder="End Date" />
+          <button class="btn btn-outline-primary"  style="margin-bottom:20px ;margin-right:10px;" (click)="filterTable()">Filter</button>
+          <button class="btn btn-outline-primary"  style="margin-bottom:20px;" (click)="clearFilter()">Clear Filter</button>
+        </div>
+      </div>
+       
+        <table id="prodTable"class="table project-list-table table-nowrap align-middle table-borderless">
+          <thead>
+            <tr>
+              <th cTableColor="info" class="text-center" *ngFor="let detailLog of detailsLog">
+                <span class="header-text">{{ detailLog }}</span>
+              </th>
+              <th cTableColor="info" class="text-center"></th>
+            </tr>
+          </thead>
+          <tbody>
+           <ng-container>
+            <!-- *ngFor="let employee of employees | filter: searchTextName:searchTextIdSage :searchTextCin :searchTextUserName  " -->
+            <tr *ngFor="let row of filteredData" > 
+           
+            <td>{{ row.date }}</td>
+            <td>{{ row.company }}</td>
+            <td>{{ row.code }}</td>
+            <td>{{ row.employee }}</td>
+            <td>{{ row.status }}</td>
+            <td>{{ row.startTime }}</td>
+            <td>{{ row.endTime }}</td>
+            <td>{{ row.breakStart }}</td>
+            <td>{{ row.breakEnd }}</td>
+            <td>{{ row.workHours }}</td>
+            <td>{{ row.overtime }}</td>
+            <td>{{ row.totalHours }}</td>
+            <td>{{ row.location }}</td>
+            <td>{{ row.category }}</td>
+
+            
+              <td class="text-center">
+              <div style="display: flex;">
+                <div><button cButton color="primary" variant="ghost" shape="rounded-pill" ><svg cIcon name="cilPencil" ></svg></button> </div>
+                <div><button cButton color="danger" variant="ghost" shape="rounded-pill" ><svg cIcon name="cilX" ></svg></button></div>
+              </div>
+              </td>
+            </tr>
+            
+            
+          
+           </ng-container>
+          
+          </tbody>
+        </table> 
+        <!-- <div>
+          <input type="date" [(ngModel)]="filterStartDate" placeholder="Start Date" />
+          <input type="date" [(ngModel)]="filterEndDate" placeholder="End Date" />
+          <button (click)="filterTable()">Filter</button>
+          <button (click)="clearFilter()">Clear Filter</button>
+        </div>
+        
+        <table>
+          <tr>
+            <th>Date</th>
+            <th>Company</th>
+            <th>Code</th>
+            <th>Employee</th>
+            <th>Status</th>
+            <th>Start Time</th>
+            <th>End Time</th>
+            <th>Break Start</th>
+            <th>Break End</th>
+            <th>Work Hours</th>
+            <th>Overtime</th>
+            <th>Total Hours</th>
+            <th>Location</th>
+            <th>Category</th>
+          </tr>
+          <tr *ngFor="let row of filteredData">
+            <td>{{ row.date }}</td>
+            <td>{{ row.company }}</td>
+            <td>{{ row.code }}</td>
+            <td>{{ row.employee }}</td>
+            <td>{{ row.status }}</td>
+            <td>{{ row.startTime }}</td>
+            <td>{{ row.endTime }}</td>
+            <td>{{ row.breakStart }}</td>
+            <td>{{ row.breakEnd }}</td>
+            <td>{{ row.workHours }}</td>
+            <td>{{ row.overtime }}</td>
+            <td>{{ row.totalHours }}</td>
+            <td>{{ row.location }}</td>
+            <td>{{ row.category }}</td>
+          </tr>
+        </table> -->
+        
+        
+  
+      </div>
+
+  </c-col>
+</c-row>
+
+ 
+  
+  <!--Demandes-->
+<c-row  *ngIf="showDemandes">
+  <c-card class=" shadow" style="margin-bottom: 20px;">
+    <c-card-body class= 'justify-content-center text-center  shadow  '>
+      <h5 cCardTitle > Les demandes</h5>
+      <div style="margin-top: 10px;margin-bottom: 10px;"> 
+        
+        <p cCardText>
+          <svg cIcon name="cilColorBorder" style="margin-right: 5px"></svg>  
+        Demandes en cours
+        <c-badge color="warning" shape="rounded-pill">2</c-badge>
+        </p>
+        <p cCardText>
+          <svg cIcon name="cilCheckCircle" style="margin-right: 5px"></svg> 
+        Demandes traitées
+        <c-badge color="info" shape="rounded-pill">1</c-badge>
+        </p>
+     </div>
+    </c-card-body>
+  </c-card>
+</c-row> 

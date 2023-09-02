@@ -1,0 +1,343 @@
+<!-- Professionnal dashboards -->
+
+<app-dashboard-admin *ngIf="ToggleDashboardService.dashbord === 'professionnel' && currentUser?.roleName === 'Admin'"></app-dashboard-admin>
+<app-dashboard-hr-officer *ngIf="ToggleDashboardService.dashbord === 'professionnel'&& currentUser?.roleName === 'HrOfficer'"></app-dashboard-hr-officer>
+<app-dashboard-supervisor *ngIf="ToggleDashboardService.dashbord === 'professionnel' && currentUser?.roleName === 'Supervisor'" ></app-dashboard-supervisor> 
+
+
+  <!--Employee-profile -->
+
+
+<c-row *ngIf="ToggleDashboardService.dashbord === 'personnel'">
+  
+  <c-col [sm]="3">
+      <c-card  class="mb-3 d-flex align-items-center justify-content-center pt-4  shadow">
+        <c-avatar
+        cTextColor="primary"
+        shape="rounded-0"
+        size="xl"
+        src="./assets/img/avatars/8.jpg"
+        
+      >
+    </c-avatar>
+        <c-card-body >
+          <h5 cCardTitle>{{currentUserprenom}} {{currentUserName}}</h5>
+          <p *ngIf="currentUserRole=== 'Employee'" cCardText>
+            Employé
+            
+          </p>
+          <p *ngIf="currentUserRole=== 'Admin'" cCardText>
+            Admin
+            
+          </p>
+          <p *ngIf="currentUserRole=== 'Supervisor'" cCardText>
+            Superviseur
+            
+          </p>
+          <p *ngIf="currentUserRole=== 'HrOfficer'" cCardText>
+            Agent RH
+            
+          </p>
+          <p *ngIf="currentUserRole=== 'CommercialAgent'" cCardText>
+            Agent commercial
+            
+          </p>
+          <p *ngIf="currentUserRole=== 'Trainer'" cCardText>
+            Formateur
+            
+          </p>
+        
+        </c-card-body>
+      </c-card>
+      <c-card class="mb-4 shadow" >
+       
+        <c-card-body>
+        <iframe width='240' height='164' style='padding:0!important;margin:0!important;border:none!important;background:none!important;background:transparent!important' marginheight='0' marginwidth='0' frameborder='0' scrolling='no' comment='/*defined*/' src='https://dayspedia.com/if/digit/?v=1&iframe=eyJ3LTEyIjpmYWxzZSwidy0xMSI6dHJ1ZSwidy0xMyI6dHJ1ZSwidy0xNCI6dHJ1ZSwidy0xNSI6dHJ1ZSwidy0xMTAiOmZhbHNlLCJ3LXdpZHRoLTAiOnRydWUsInctd2lkdGgtMSI6ZmFsc2UsInctd2lkdGgtMiI6ZmFsc2UsInctMTYiOiIyNHB4Iiwidy0xOSI6IjQ4Iiwidy0xNyI6IjE2Iiwidy0yMSI6dHJ1ZSwiYmdpbWFnZSI6LTEsImJnaW1hZ2VTZXQiOmZhbHNlLCJ3LTIxYzAiOiIjZmZmZmZmIiwidy0wIjp0cnVlLCJ3LTMiOmZhbHNlLCJ3LTNjMCI6IiNmZmZmZmYiLCJ3LTNiMCI6IjEiLCJ3LTYiOiIjNWQ1YjViIiwidy0yMCI6dHJ1ZSwidy00IjoiI2ZmZmZmZiIsInctMTgiOnRydWUsInctd2lkdGgtMmMtMCI6IjMwMCIsInctMTE1IjpmYWxzZX0=&lang=fr&cityid=8971'></iframe><!--Dayspedia.com widget ENDS-->        </c-card-body>
+      </c-card>
+      <!-- <iframe src="https://giphy.com/embed/38URZ5I59iA85xVifQ" width="200" height="200" frameBorder="0" class="giphy-embed" allowFullScreen></iframe> -->
+
+
+
+      <c-card class="mb-4 shadow" >
+        <c-card-body>
+          <a class="weatherwidget-io" href="https://forecast7.com/fr/36d8110d18/tunis/" data-label_1="TUNIS" data-label_2="Méteo" data-font="Verdana" data-icons="Climacons Animated" data-mode="Current" data-days="5" data-theme="clear" >TUNIS Méteo</a>
+        </c-card-body>
+      </c-card>
+
+      <c-card>
+        <c-card-header>
+          <h5 cCardTitle >Nouveautés TCC</h5>
+        </c-card-header>
+        <c-card-body>
+          <c-carousel [animate]="false" transition="crossfade">
+            <c-carousel-inner>
+              <c-carousel-item>
+                <a href="https://www.tuniscallcenter.com/actualites/tcc-votre-partenaire-strategique-depuis-1998/"><img
+                  src="https://i.ibb.co/KKm7c95/2023-06-12-22h50-38.png"
+                  class="d-block w-100"
+                  loading="lazy"
+                /></a>
+
+              </c-carousel-item>
+              <c-carousel-item>
+                <a href="https://www.tuniscallcenter.com/actualites/les-enjeux-majeurs-de-la-relation-client/"><img
+                  src="https://i.ibb.co/R32LK51/2023-06-12-23h11-49.png"
+                  class="d-block w-100"
+                  loading="lazy"
+                /></a>
+              </c-carousel-item>
+              <c-carousel-item >
+     
+                <a href="https://www.tuniscallcenter.com/actualites/lexperience-client-plus-decisive-que-jamais/"> <img
+                
+                  src="https://i.ibb.co/s1TxRvj/2023-06-12-23h23-13.png"
+                  class="d-block w-100"
+                  loading="lazy"
+                /> </a>
+              </c-carousel-item>
+            </c-carousel-inner>
+            <c-carousel-control [routerLink] caption="Previous" direction="prev"></c-carousel-control>
+            <c-carousel-control [routerLink] caption="Next" direction="next"></c-carousel-control>
+          </c-carousel>
+        </c-card-body>
+      </c-card>
+   
+     
+  </c-col>
+  <c-col [sm]="9 ">
+
+    <c-card class=" shadow" style="margin-bottom: 20px;">
+      <button class="border-0 "  cButton color="dark"  variant="outline"  (click)="toggleTable();getPlanning(currentUserRefplanningWeek)" 
+          onmouseover="this.style.backgroundColor='#d6ebff'; this.style.color='#0868ff';"
+          onmouseout="this.style.backgroundColor='#fff'; this.style.color='#4f5d73';" >
+            <svg cIcon name="cil-calendar" size="3xl"></svg>
+          </button>
+
+      <c-card-body class='justify-content-center text-center shadow'>
+        <h5 cCardTitle>Mon Planning</h5>
+        
+        <c-callout *ngIf="showTable" color="info">
+        <table  cTable>
+          <thead cTableColor="info">
+            <tr>
+              <th class="text-center"></th>
+              <th class="text-center" *ngFor="let day of days">{{ day }}</th>
+            </tr>
+          </thead>
+          <tbody>
+           
+              <tr>
+                <td  style="text-align: left;"><strong>Début S1</strong></td>
+                
+                  <td class="text-center">
+                   {{ planning?.lundi?.heureDebut_S1 }}
+                  </td>
+                  <td class="text-center">
+                    {{ planning?.mardi?.heureDebut_S1 }}
+                   </td>
+                   <td class="text-center">
+                    {{ planning?.mercredi?.heureDebut_S1 }}
+                   </td>
+                   <td class="text-center">
+                    {{ planning?.jeudi?.heureDebut_S1 }}
+                   </td>
+                   <td class="text-center">
+                    {{ planning?.vendredi?.heureDebut_S1 }}
+                   </td>
+                   <td class="text-center">
+                    {{ planning?.samedi?.heureDebut_S1 }}
+                   </td>
+                   <td class="text-center">
+                    {{ planning?.dimanche?.heureDebut_S1 }}
+                   </td>
+                
+              </tr>
+              <tr>
+                <td  style="text-align: left;"><strong>Fin S1</strong></td>
+                
+                  <td class="text-center">
+                   {{ planning?.lundi?.heureFin_S1 }}
+                  </td>
+                  <td class="text-center">
+                    {{ planning?.mardi?.heureFin_S1 }}
+                   </td>
+                   <td class="text-center">
+                    {{ planning?.mercredi?.heureFin_S1 }}
+                   </td>
+                   <td class="text-center">
+                    {{ planning?.jeudi?.heureFin_S1 }}
+                   </td>
+                   <td class="text-center">
+                    {{ planning?.vendredi?.heureFin_S1 }}
+                   </td>
+                   <td class="text-center">
+                    {{ planning?.samedi?.heureFin_S1}}
+                   </td>
+                   <td class="text-center">
+                    {{ planning?.dimanche?.heureFin_S1 }}
+                   </td>
+                
+              </tr>
+
+              <tr>
+                <td  style="text-align: left;"><strong>Début S2</strong></td>
+                
+                  <td class="text-center">
+                   {{ planning?.lundi?.heureDebut_S2 }}
+                  </td>
+                  <td class="text-center">
+                    {{ planning?.mardi?.heureDebut_S2 }}
+                   </td>
+                   <td class="text-center">
+                    {{ planning?.mercredi?.heureDebut_S2 }}
+                   </td>
+                   <td class="text-center">
+                    {{ planning?.jeudi?.heureDebut_S2}}
+                   </td>
+                   <td class="text-center">
+                    {{ planning?.vendredi?.heureDebut_S2}}
+                   </td>
+                   <td class="text-center">
+                    {{ planning?.samedi?.heureDebut_S2}}
+                   </td>
+                   <td class="text-center">
+                    {{ planning?.dimanche?.heureDebut_S2 }}
+                   </td>
+                
+              </tr>
+              <tr>
+                <td  style="text-align: left;"><strong>Fin S2</strong></td>
+                
+                  <td class="text-center">
+                   {{ planning?.lundi?.heureFin_S2 }}
+                  </td>
+                  <td class="text-center">
+                    {{ planning?.mardi?.heureFin_S2 }}
+                   </td>
+                   <td class="text-center">
+                    {{ planning?.mercredi?.heureFin_S2 }}
+                   </td>
+                   <td class="text-center">
+                    {{ planning?.jeudi?.heureFin_S2}}
+                   </td>
+                   <td class="text-center">
+                    {{ planning?.vendredi?.heureFin_S2}}
+                   </td>
+                   <td class="text-center">
+                    {{ planning?.samedi?.heureFin_S2}}
+                   </td>
+                   <td class="text-center">
+                    {{ planning?.dimanche?.heureFin_S2 }}
+                   </td>
+                
+              </tr>
+
+          </tbody>
+        </table>
+      </c-callout >
+      </c-card-body>
+    </c-card>
+      
+      <c-card class=" shadow" style="margin-bottom: 20px;">
+        <button class="border-0 "  cButton color="dark"  variant="outline"  (click)="toggleTableP()" 
+        onmouseover="this.style.backgroundColor='#feefd0'; this.style.color='#f9b115';"
+        onmouseout="this.style.backgroundColor='#fff'; this.style.color='#4f5d73';" >
+          <svg cIcon name="cilAvTimer" size="3xl"></svg>
+          
+        </button>
+        <c-card-body class='justify-content-center text-center shadow'>
+          <h5 cCardTitle>Ma porduction horaire</h5>
+          
+   
+        <c-callout *ngIf="showTableP"  color="warning">
+          <table borderless cTable>
+          
+          
+            <tbody>
+              <tr>
+                <td style="text-align: left;">
+                  <strong>Début production : </strong>{{ logService.LogOnTimeS1 }}
+                </td> 
+              </tr>
+              <tr>
+                <td style="text-align: left;">
+                  <strong>Début pause repas :</strong>{{ logService.LogOffTimeS1 }}
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: left;">
+                  <strong>Fin pause repas :</strong>{{ logService.LogOnTimeS2 }}
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: left;">
+                  <strong>Fin production :</strong>{{ logService.LogOffTimeS2 }}
+                </td>
+              </tr>  
+            </tbody>
+          </table>
+            
+        </c-callout>
+        </c-card-body>
+      </c-card>
+
+      <c-card class=" shadow" style="margin-bottom: 20px;">
+        <button class="border-0 "  cButton color="dark"  variant="outline" 
+        onmouseover="this.style.backgroundColor=' #ff638461'; this.style.color='#ff6384';"
+        onmouseout="this.style.backgroundColor='#fff'; this.style.color='#4f5d73';" >  
+        
+          <svg cIcon name="cilFeaturedPlaylist" size="3xl"></svg>
+   
+          
+        </button>
+        <c-card-body class= 'justify-content-center text-center  shadow  '>
+          <h5 cCardTitle >Mes demandes</h5>
+          <div style="margin-top: 10px;margin-bottom: 10px;"> 
+            
+            <p cCardText>
+              <svg cIcon name="cilColorBorder" style="margin-right: 5px"></svg>  
+            Demandes en cours
+            <c-badge color="warning" shape="rounded-pill">2</c-badge>
+            </p>
+            <p cCardText>
+              <svg cIcon name="cilCheckCircle" style="margin-right: 5px"></svg> 
+            Demandes traitées
+            <c-badge color="info" shape="rounded-pill">1</c-badge>
+            </p>
+         </div>
+        </c-card-body>
+      </c-card>
+<div style="display: flex;height: 400px;">
+  <c-card   style="width: 50%; margin-right: 15px;"  >
+    <c-card-header>
+      <h5 cCardTitle >Recrutement TCC</h5>
+    </c-card-header>
+    <c-card-body class= 'justify-content-center text-center  shadow  '
+    style="background-image: url('https://i.ibb.co/stj64NY/Join-Us-TCC2.jpg'); background-repeat: no-repeat;">
+
+<!--      
+    <img style="height: 100%; width: 100%; " src=" https://i.ibb.co/hX2NbVj/Join-Us-TCC.jpg"> -->
+    </c-card-body>
+  </c-card>
+  <c-card   style="width: 50% ;"  >
+    <c-card-header>
+      <h5 cCardTitle >Evenements TCC</h5>
+    </c-card-header>
+    <c-card-body class= 'justify-content-center text-center  shadow  '
+    style="background-image: url('https://i.ibb.co/yyxBQ1h/event-Tcc2.jpg'); background-repeat: no-repeat;"
+>
+
+     
+    <!-- <img style="height: 60%; width: 100%; margin-right: 15px;" src="https://i.ibb.co/7YxM7kr/eventTcc.jpg"> -->
+    </c-card-body>
+  </c-card>
+
+</div>
+
+       
+<!-- https://i.ibb.co/hX2NbVj/Join-Us-TCC.jpg -->
+
+  </c-col>
+</c-row> 
+
+

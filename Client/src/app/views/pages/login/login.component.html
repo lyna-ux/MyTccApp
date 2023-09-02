@@ -1,0 +1,94 @@
+<div class="bg-light min-vh-100 d-flex flex-row align-items-center">
+
+
+  
+  <!-- <mat-form-field appearance="fill">
+    <mat-label>Fill form field</mat-label>
+    <input [(ngModel)]="model.username" atInput placeholder="Placeholder"  >
+    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Fill form field</mat-label>
+    <input [(ngModel)]="model.password" matInput placeholder="Placeholder"  >
+    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+  </mat-form-field> -->
+ 
+  <c-container>
+    <c-row class="justify-content-center">
+      <c-col md="8">
+        <c-card-group>
+          <c-card class="p-4" style="height: 324px;">
+            <c-card-body>
+              <form #loginForm="ngForm" (ngSubmit)="login() " autocomplete="off" cForm  >
+                <h1>Connexion</h1>
+                <p class="text-medium-emphasis">J'accéde à mon espace MyTcc</p>
+                  <input  name="username" 
+                  [(ngModel)]="model.username"
+                          cFormControl 
+                          placeholder="Nom d'utilisateur" 
+                          style="border-top: none; border-left: none; border-right: none; border-bottom: 2px solid #c6d500;margin-bottom: 15px;"
+                          onfocus="this.style.borderColor='#c6d500';"
+                          onblur="this.style.borderColor='#c6d500';"    
+                          />
+                          
+                  <input
+                    name="password" 
+                    [(ngModel)]="model.password"
+                    cFormControl
+                    placeholder="Mot de passe"
+                    style="border-top: none; border-left: none; border-right: none; border-bottom: 2px solid #c6d500;margin-bottom: 30px;"
+         
+                    type="password"
+                  />
+                  <!-- <mat-form-field appearance="fill">
+                    <mat-label>Fill form field</mat-label>
+                    <input [(ngModel)]="model.password" matInput placeholder="Placeholder"  >
+                    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                  </mat-form-field> -->
+  
+                <c-row>
+                  <c-col xs="6">
+                    <button cButton class="px-4" style="background-color:#c6d500 ; border-color: #c6d500;" type="submit" >
+                     Me connecter
+                     <a  routerLink="/dashboard" onclick="collectchat.open('64ba5c375a75a9e3a5e29cc4')" >
+                      
+                    </a>
+                    </button>
+                  </c-col>
+                  <c-col class="text-right" xs="6">
+                   
+                  </c-col>
+                </c-row>
+              </form>
+            </c-card-body>
+          </c-card >
+          
+            
+          <c-card [ngStyle]="{'width.%': 44 }" class="text-white  py-5"style="height: 324px;   background-image: url('https://i.ibb.co/LNS4HHM/bg-login.jpg');">
+         
+            <c-card-body style="display: flex; justify-content: center; padding-top: 5px;">
+              <img  src="https://i.ibb.co/5Wzpy2p/My-TCC-Logo-lg.png" style="width: 250px; height: 89px"> 
+            </c-card-body>
+           
+            </c-card> 
+            
+           
+           
+         
+           
+            
+     
+          
+         
+        </c-card-group>
+      </c-col>
+    </c-row>
+    
+   
+      
+   
+    
+  </c-container>
+
+
+</div>

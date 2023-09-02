@@ -1,0 +1,19 @@
+.home-link {
+    /* Add your default styles here */
+    color: black;
+    font-weight: normal;
+    transition: color 0.3s ease;
+  }
+  
+  .home-link:hover {
+    /* Add your hover styles here */
+    color: rgba(225, 0, 255, 0.657);
+    font-weight: bold;
+  }
+  .active-color {
+    color: green;
+  }
+  
+  .inactive-color {
+    color: red;
+  }

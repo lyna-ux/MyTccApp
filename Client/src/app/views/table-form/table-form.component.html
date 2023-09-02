@@ -1,0 +1,72 @@
+<!-- 
+<form [formGroup]="tableForm">
+ 
+    <div>
+      <label for="day">Jour de la semaine</label>
+      <c-dropdown   direction="dropend" variant="btn-group">
+        <button color="info"  cButton cDropdownToggle id="day">{{ selectedDay || 'Select a day' }}</button>
+        <ul cDropdownMenu>
+          <li><button cDropdownItem [disabled]="true">Choisir un jour</button></li>
+          <li><button cDropdownItem (click)="selectDay('all')">Tous</button></li>
+          <li><button cDropdownItem (click)="selectDay('weekdays')">Du Lundi au Vendredi</button></li>
+          <li *ngFor="let day of days">
+            <button cDropdownItem (click)="selectDay(day)">{{ day }}</button>
+          </li>
+        </ul>
+      </c-dropdown>
+    </div>
+
+    <div class="input-groups-container" style="display: flex;">
+      <c-input-group style=" margin-right: 10px;">
+        <input type="time" formControlName="startTime1" cFormControl />
+        <span for="startTime2" cInputGroupText>Début séance 1</span>
+      </c-input-group>
+    
+      <c-input-group style=" margin-right: 10px;">
+        <input type="time" formControlName="endTime1" cFormControl />
+        <span for="endTime1" cInputGroupText>Fin séance 1</span>
+      </c-input-group>
+    
+      <c-input-group style=" margin-right: 10px;">
+        <input type="time" formControlName="startTime2" cFormControl />
+        <span for="startTime2" cInputGroupText>Début séance 2</span>
+      </c-input-group>
+    
+      <c-input-group style=" margin-right: 10px;">
+        <input type="time" formControlName="endTime2" cFormControl />
+        <span for="endTime2" cInputGroupText>Fin séance 2</span>
+      </c-input-group>
+      <button cButton color="info"  (click)="createTable()">Valider</button>
+      
+    </div>
+
+   
+    </form>
+
+   
+
+        <table
+        *ngIf="tableData"
+          cTable
+         
+        >
+          <thead cTableColor="info">
+            <tr >
+              <th  cTableColor="info" class="text-center"></th>
+              <th cTableColor="warning" class="text-center" *ngFor="let day of days">{{ day }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let timeSlot of timeSlots">
+              <td cTableColor="info" class="text-center">{{ timeSlot }}</td>
+              <td  class="text-center" *ngFor="let day of days">{{ tableData[day]?.[timeSlot] }}</td>
+            </tr>
+          </tbody>
+        </table>
+    
+
+
+  
+   
+
+  -->

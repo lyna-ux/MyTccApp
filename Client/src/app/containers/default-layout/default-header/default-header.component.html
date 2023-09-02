@@ -1,0 +1,266 @@
+
+
+<ng-container  style="background-color: #e3d5d1;"  >
+  <c-container >
+ 
+
+    <c-header-nav class="d-none d-lg-flex me-auto" >
+
+      <c-nav-item>
+        <c-dropdown  autoClose="outside" alignment="start" variant="nav-item">
+          <button
+            cButton
+            color=""
+            [caret]="false"
+            cDropdownToggle
+            class="py-0"
+          >
+          <svg cIcon name="cilAvTimer" size="lg" style="color: blueviolet;"></svg>
+          
+          </button>
+          <!-- <a href="#" onclick="collectchat.open('64ba82ee5039f4e3b6081058')">Open Chat</a> -->
+          <ul cDropdownMenu class="pt-0 pr-5 w-auto" >
+  
+            <h6 cDropdownHeader   class="bg-light fw-semibold py-2">Rapport journalier</h6>
+            <li *ngIf="logService.status =='Déconnecté' ">
+              <a  routerLink="/dashboard" cDropdownItem >
+               <svg cIcon class="me-2" name="cilMediaPlay"></svg>
+                Connecté
+               <c-badge class="ms-2 float-end" color="success" shape="rounded-pill">
+                 {{ logService.FinalDuration }}
+               </c-badge>
+             </a>
+           </li>
+          
+            <li>
+               <a  routerLink="/dashboard" cDropdownItem >
+                <svg cIcon class="me-2" name="cilMediaPause"  ></svg>
+                  Pause
+                <c-badge class="ms-2 float-end" color="warning" shape="rounded-pill">
+                  {{ logService.breakDuration }}
+                </c-badge>
+              </a>
+            </li>
+            <li>
+              <a  routerLink="/dashboard" cDropdownItem >
+               <svg cIcon class="me-2" name="cilHighlighter"></svg>
+                Formation
+               <c-badge class="ms-2 float-end" color="info" shape="rounded-pill">
+                 {{ logService.FormationDuration }}
+               </c-badge>
+             </a>
+           </li>
+           <li>
+            <a  routerLink="/dashboard" cDropdownItem >
+             <svg cIcon class="me-2" name="cilRestaurant"></svg>
+              Pause repas
+             <c-badge class="ms-2 float-end" color="danger" shape="rounded-pill">
+               {{ logService.LunchBreakDuration }}
+             </c-badge>
+           </a>
+         </li>
+          </ul>
+        </c-dropdown>
+      </c-nav-item>
+  
+     <c-nav-item style="font-weight: bolder; color: blueviolet;">{{ logService.status }}</c-nav-item>
+     
+    </c-header-nav>
+
+    
+    <c-header-nav class="ms-3">
+      <ng-container *ngTemplateOutlet="userDropdown"></ng-container>
+    </c-header-nav>
+
+  </c-container>
+  
+
+</ng-container>
+
+
+
+
+<ng-template #userDropdown>
+  <c-dropdown  autoClose="outside" alignment="end" variant="nav-item">
+    <button
+      cButton
+      color=""
+      [caret]="false"
+      cDropdownToggle
+      class="py-0"
+    >
+    <c-avatar
+        cTextColor="primary"
+        shape="rounded-1"
+        size="md"
+        src="./assets/img/avatars/8.jpg"
+        [status]="getStatusColor()"
+      >
+    </c-avatar>
+    </button>
+
+    <ul cDropdownMenu class="pt-0 pr-5 w-auto">
+     <li>
+        <h6 cDropdownHeader   class="bg-light fw-semibold py-2">
+          
+          {{logService.logType}}
+
+        <a routerLink="/dashboard" (click)="logService.ToggleLogType(); logService.logType === 'Formation' && logService.timerSubscription ? logService.startFormation() : null;
+        logService.logType === 'Production' && logService.timerSubscription ? logService.stopFormation() : null">
+          <svg cIcon class="me-2" name="cilSwapHorizontal" [ngStyle]="{color: 'blue'}">
+
+        </svg></a>
+        </h6>
+     </li>
+
+
+      <!-- <li>
+        <a routerLink="/dashboard" cDropdownItem (click)="toggleStatus()" [ngStyle]="{ 'background-color': logService.status === 'Production' ? '#b2e3c0ad' : 'inherit' }">
+          <svg cIcon class="me-2" name="cilMediaPlay" [ngStyle]="{ color: logService.status === 'Production' ? 'green' : 'inherit' }"></svg>
+          <span *ngIf="logService.status === 'Déconnecté' && !log">Se connecter</span>
+          <span *ngIf="logService.status === 'Déconnecté' && log">Pause</span>
+          <c-badge class="ms-2 float-end" [color]="getStatusColor()">
+            <ng-container *ngIf="logService.isBreakActive">
+              {{ logService.breakTimerDuration }}
+            </ng-container>
+            <ng-container *ngIf="!logService.isBreakActive">
+              {{ logService.breakDuration }}
+            </ng-container>
+          </c-badge>
+        </a>
+      </li> -->
+     
+      
+      <li *ngIf="logService.status!='Pause repas' ">
+        <a routerLink="/dashboard" cDropdownItem onclick="collectchat.open('64ba82ee5039f4e3b6081058')"  (click)="logService.startLog();logService.logType === 'Formation'                                                                                 ? logService.toggleFormation() : null" 
+        [ngStyle]="{ 'background-color': logService.status === 'Production' ? '#b2e3c0ad' : 'inherit' }"
+       >
+          <svg cIcon class="me-2" name="cilMediaPlay" ></svg>
+          <ng-container *ngIf="!logService.timerSubscription">
+            Se connecter
+          </ng-container>                                                                        
+          <ng-container *ngIf="logService.timerSubscription">
+            Connecté
+          </ng-container>                                                                      
+          <c-badge *ngIf="logService.timerSubscription" class="ms-2 float-end" color="success">                            
+              {{ logService.duration}} 
+          </c-badge>
+
+        </a>
+      </li>
+      
+    
+      <li *ngIf="logService.timerSubscription">
+         <a  routerLink="/dashboard" cDropdownItem (click)="logService.toggleBreak()" [ngStyle]="{ 'background-color': logService.status === 'Pause Café' ? '#f9b11569' : 'inherit' }">
+          <svg cIcon class="me-2" name="cilMediaPause"></svg>
+          <ng-container *ngIf="!logService.isBreakActive">
+            Pause
+          </ng-container>
+          <ng-container *ngIf="logService.isBreakActive">
+            En pause
+          </ng-container>
+        
+          <c-badge *ngIf="logService.isBreakActive" class="ms-2 float-end" color="warning">
+            {{ logService.breakTimerDuration }}
+          </c-badge>
+          
+
+          <!-- <c-badge class="ms-2 float-end" color="warning">
+            <ng-container *ngIf="logService.isBreakActive">
+              {{ logService.breakTimerDuration }}
+            </ng-container>
+            <ng-container *ngIf="!logService.isBreakActive">
+              {{ logService.breakDuration }}
+            </ng-container>
+          </c-badge> -->
+        </a>
+      </li>
+
+
+      <li  *ngIf="logService.logType === 'Formation' && logService.timerSubscription" >
+        <a  routerLink="/dashboard" cDropdownItem (click)="logService.toggleFormation()" [ngStyle]="{ 'background-color': logService.status === 'Formation' ? 'success' : 'inherit' }"
+        [ngStyle]="{ 'background-color': logService.status === 'Formation' ? '#3399ff5e' : 'inherit' }">
+         <svg cIcon class="me-2" name="cilHighlighter"></svg>
+         <ng-container *ngIf="!logService.isFormationActive">
+          Formation
+         </ng-container>
+         <ng-container *ngIf="logService.isFormationActive">
+           En formation
+         </ng-container>
+
+         <c-badge *ngIf="logService.isFormationActive" class="ms-2 float-end" color="info">{{ logService.FormationTimerDuration }}</c-badge>
+         <c-badge *ngIf="!logService.isFormationActive" class="ms-2 float-end" color="info">{{ logService.FormationDuration }}</c-badge> 
+            <!-- en cours {{ logService.FormationTimerDuration }}
+            total   {{ logService.FormationDuration }} -->
+
+         <!-- <c-badge class="ms-2 float-end" color="warning">
+           <ng-container *ngIf="logService.isFormationActive">
+             {{ logService.FormationTimerDuration }}
+           </ng-container>
+           <ng-container *ngIf="!logService.isFormationActive">
+             {{ logService.FormationDuration }}
+           </ng-container>
+         </c-badge> -->
+       </a>
+     </li>
+
+     <li *ngIf="logService.timerSubscription || logService.status=='Pause repas'  " >
+      <a routerLink="/dashboard" cDropdownItem onclick="collectchat.open('64ba94945a75a9e3a5e29d08')"  (click)="logService.toggleLunchBreak()"
+      [ngStyle]="{ 'background-color': logService.status === 'Pause repas' ? '#e5535352' : 'inherit' }">
+       <svg cIcon class="me-2" name="cilRestaurant"></svg>
+       <ng-container>
+        Pause repas
+       </ng-container>
+       <c-badge  *ngIf="logService.status=='Pause repas' "  class="ms-2 float-end" color="danger">{{ logService.LunchBreakDuration}}</c-badge> 
+     </a>
+   </li>
+
+
+      <li   *ngIf="logService.status !== 'Déconnecté' && logService.status!=='Pause repas' ">
+        <a id="deconnexionButton" routerLink="/dashboard" cDropdownItem onclick="collectchat.open('64bd94a05a75a9e3a5e29f66')" (click)="logService.stopLog();logService.seDeconnecter();  addLog(); logProperties()"   >
+          <svg cIcon class="me-2" name="cilPowerStandby"></svg>
+          Se déconnecter
+          <!-- <c-badge class="ms-2 float-end" color="danger">
+            42
+          </c-badge> -->
+        </a>
+      </li>
+      <!-- <li>
+        <a routerLink="./" cDropdownItem>
+          <svg cIcon class="me-2" name='cilCommentSquare'></svg>
+          Comments
+          <c-badge class="ms-auto" color="warning">
+            42
+          </c-badge>
+        </a>
+      </li> -->
+      <li>
+        <h6 cDropdownHeader class="bg-light fw-semibold py-2">Compte</h6>
+      </li>
+      <li></li>
+      <li>
+        <a routerLink="./" cDropdownItem  (click)="toggleDashbord('personnel')">
+          <svg cIcon class="me-2" name="cilUser"></svg>
+          Mon espace personnel
+        </a>
+      </li>    
+      <li>
+        <a routerLink="./" cDropdownItem (click)="toggleDashbord('professionnel')">
+          <svg cIcon class="me-2" name="cilCreditCard"></svg>
+          Mon espace professionnel
+        </a>
+      </li>
+      <li>
+        <a routerLink="/login" (click)="logout()" cDropdownItem>
+          <svg cIcon class="me-2" name="cilCreditCard"></svg>
+          Log out
+        </a>
+      </li>
+    
+
+      <!-- <li></li> 
+      DONT FORGET TO ADD THE LOGOUT  WITH THE EVENT !! detleted -->
+    </ul>
+  </c-dropdown>
+</ng-template>
+

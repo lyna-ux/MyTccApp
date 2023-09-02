@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--
+* CoreUI - Angular 15.2 Free Admin Template
+* @version v4.3.10
+* @link https://coreui.io/angular/
+* Copyright (c) 2017-2023 creativeLabs Łukasz Holeczek
+* License: MIT
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <base href="./">
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+  <meta content="CoreUI Free Angular Admin Template" name="description" />
+  <meta content="Łukasz Holeczek" name="author" />
+  <meta
+    content="CoreUI,Bootstrap,Admin,Template,Free,Angular,Dashboard,Typescript"
+    name="keyword"
+  />
+  <link href="assets/favicon.ico" rel="icon" type="image/x-icon">
+  <title>My TCC</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body class="mat-typography">
+  <!-- <a class="weatherwidget-io" href="https://forecast7.com/fr/36d8110d18/tunis/" data-label_1="TUNIS" data-label_2="Méteo" data-font="Verdana" data-icons="Climacons Animated" data-mode="Current" data-days="5" data-theme="clear" >TUNIS Méteo</a> -->
+  <script>
+  !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+  </script>
+<script src="https://cdn.commoninja.com/sdk/latest/commonninja.js" defer></script>
+ 
+  <app-root>
+    <script>
+      var CollectId = "64bf86245039f4e3b60814ca"; // Set your default Collect.chat ID here
+    </script>
+   <script> 
+   var CollectId = "64bf86245039f4e3b60814ca"; 
+   (function(w, d) { w.CollectId = CollectId; 
+   var h = d.head || d.getElementsByTagName("head")[0]; var s = d.createElement("script"); 
+   s.setAttribute("type", "text/javascript"); 
+   s.async=true; s.setAttribute("src", "https://collectcdn.com/launcher.js"); 
+   h.appendChild(s); })(window, document);
+  </script> 
+    <div class="fade show" style="text-align: center; padding-top: calc(100vh / 2); height: 100vh"> 
+      <i class="spinner-grow spinner-grow-sm"></i>
+      <span class="m-1">Chargement...</span>
+    </div>
+  </app-root>
+</body>
+
+</html>

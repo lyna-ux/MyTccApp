@@ -1,0 +1,293 @@
+
+<!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script> -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Font Awesome --> 
+<!-- <link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  rel="stylesheet"
+/> -->
+<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+<!-- Main Menu -->
+<div style="display: flex;">
+  <div class="ten " style="width: 90%">
+    <h1>Service IT</h1>
+  
+  </div>
+  <div style="width: 10%">
+    <a   href="javascript:void(0);" (click)="showMainMenu()" >
+      <i class='bx bxs-dashboard dashboardBoxIcon ' ></i>
+    </a>  
+  </div>
+  
+</div>
+<c-row  *ngIf="showMenu">
+ 
+ 
+  <c-col cols="12" md="6" lg="4" class="mt-4 pt-2">
+    <div class="card service-wrapper rounded border-0 shadow p-4">
+      <div class="icon-container text-center  shadow rounded ">
+        
+          <svg  href="javascript:void(0)" (click)="toggleTable('employees');HidelMainMenu()" class="icon-link" xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-person-lines-fill"  viewBox="0 0 24 24" width="9em"> <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1h-4zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2z"/> </svg>
+      
+      </div>
+      
+      <div class="content mt-4">
+        <h3 class="title">Employés</h3>
+        <ul>
+          <li><a  href="javascript:void(0)" >Liste des employés</a></li>
+          <li></li>
+         
+        </ul>
+        <div class="mt-3">
+          <div class="big-icon h1 text-custom">
+            <span class="uim-svg" >
+              <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-person-lines-fill"  viewBox="0 0 24 24" width="1em"> <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1h-4zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2z"/> </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </c-col>
+  <c-col cols="12" md="6" lg="4" class="mt-4 pt-2">
+    <div class="card service-wrapper rounded border-0 shadow p-4">
+      <div class="icon-container text-center  shadow rounded ">
+
+ 
+        <svg href="javascript:void(0)"   (click)="toggleTable('accounts');HidelMainMenu()"class="icon-link"  xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-person-lines-fill"  viewBox="0 0 24 24" width="9em">  <path fill-rule="evenodd" d="M6 2a.5.5 0 0 1 .47.33L10 12.036l1.53-4.208A.5.5 0 0 1 12 7.5h3.5a.5.5 0 0 1 0 1h-3.15l-1.88 5.17a.5.5 0 0 1-.94 0L6 3.964 4.47 8.171A.5.5 0 0 1 4 8.5H.5a.5.5 0 0 1 0-1h3.15l1.88-5.17A.5.5 0 0 1 6 2Z"/> </svg>
+        
+      
+      </div>
+      
+      <div class="content mt-4">
+        <h3 class="title">Compte</h3>
+        <ul>
+          <li><a href="#">Liste des comptes</a></li>
+
+        </ul>
+        <div class="mt-3">
+          <div class="big-icon h1 text-custom">
+            <span class="uim-svg" >
+              <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-person-lines-fill"  viewBox="0 0 24 24" width="1em">  <path fill-rule="evenodd" d="M6 2a.5.5 0 0 1 .47.33L10 12.036l1.53-4.208A.5.5 0 0 1 12 7.5h3.5a.5.5 0 0 1 0 1h-3.15l-1.88 5.17a.5.5 0 0 1-.94 0L6 3.964 4.47 8.171A.5.5 0 0 1 4 8.5H.5a.5.5 0 0 1 0-1h3.15l1.88-5.17A.5.5 0 0 1 6 2Z"/> </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </c-col>
+  <c-col cols="12" md="6" lg="4" class="mt-4 pt-2">
+    <div class="card service-wrapper rounded border-0 shadow p-4">
+      <div class="icon-container text-center  shadow rounded ">
+  
+          <svg  href="javascript:void(0)"  xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-person-lines-fill"  viewBox="0 0 24 24" width="9em">  <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/> <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/> </svg>
+      
+      </div>
+      
+      <div class="content mt-4">
+        <h3 class="title">Les demandes</h3>
+        <ul>
+          <li><a href="javascript:void(0);">Demandes à traiter</a></li>
+
+        </ul>
+        <div class="mt-3">
+          <div class="big-icon h1 text-custom">
+            <span class="uim-svg" >
+              <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-person-lines-fill"  viewBox="0 0 24 24" width="1em"> <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/> <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/> </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </c-col>
+
+</c-row>
+
+<div *ngIf="!showMenu && activeTable === 'employees'" >
+  <c-row>
+    <div class="three">
+      <h1 >Employés</h1>
+    </div>
+  </c-row>
+  <c-row style="width: 100%;"   >
+    <c-col >
+   
+      <div  style="overflow-x: auto;">
+       
+        <div>
+        
+          <ng-container  *ngIf="selectedEmployee === null">
+            <c-dropdown direction="dropend" variant="btn-group">
+              <button cButton  variant="ghost" cDropdownToggle>
+                <svg cIcon name="cilZoom" ></svg>
+                <!-- selectedFilter === 'searchTextPrenom' ? 'Rechercher par Prénom' : -->
+                {{ 
+                  selectedFilter === 'searchTextName' ? 'Rechercher par Nom' :
+                  selectedFilter === 'searchTextIdSage' ? 'Rechercher par Matricule' :
+                  selectedFilter === 'searchTextCin' ? 'Rechercher par CIN' :
+                   'Rechercher par' }}
+              </button>
+              <ul cDropdownMenu>
+                <!--   <li><button cDropdownItem (click)="setSelectedFilter('searchTextPrenom')">Prénom</button></li> -->
+                <li><button cDropdownItem (click)="setSelectedFilter('searchTextName')">Nom</button></li>
+                <li><button cDropdownItem (click)="setSelectedFilter('searchTextIdSage')">Matricule</button></li>
+                <li><button cDropdownItem (click)="setSelectedFilter('searchTextCin')">CIN</button></li>
+              </ul>
+            </c-dropdown>
+            <!-- <input *ngIf="selectedFilter === 'searchTextPrenom'" type="text" [(ngModel)]="searchTextPrenom" id="searchTextPrenom" class="search-input" placeholder="Prénom"> -->
+            <input *ngIf="selectedFilter === 'searchTextName'" type="text" [(ngModel)]="searchTextName" id="searchTextName" class="search-input" placeholder="Nom">
+            <input *ngIf="selectedFilter === 'searchTextIdSage'" type="text" [(ngModel)]="searchTextIdSage" id="searchTextIdSage" class="search-input" placeholder="Matricule">
+            <input *ngIf="selectedFilter === 'searchTextCin'" type="text" [(ngModel)]="searchTextCin" id="searchTextCin" class="search-input" placeholder="CIN">
+          </ng-container>
+          <div *ngIf="selectedEmployee != null" style =" width: 20%">
+            <button cButton  variant="ghost" (click)="redirectToAllEmployees()"> Tout les employés</button>
+          </div>
+          
+        </div>
+        <div style=" overflow: auto; "class="table-responsive">
+          <table  class="table project-list-table table-nowrap align-middle table-borderless" >
+            <thead style="position: sticky; top: 0; background-color: #f0f0f0;">
+              <tr>
+                <th class="text-center" scope="col" *ngFor="let detail of details">
+                  <span class="header-text">{{ detail }}</span>
+                </th>
+                <th class="text-center" scope="col">Compte</th>
+              </tr>
+            </thead>
+            <tbody>
+             <ng-container *ngFor="let employee of employees | filter: searchTextName:searchTextIdSage :searchTextCin :searchTextUserName  ">
+              <tr *ngIf="!selectedEmployee || selectedEmployee === employee" > 
+                <!--  -->
+                <!-- :searchTextName : searchTextCin : searchTextIdSage -->
+                <td class="text-center">{{ employee.prenom }}</td>
+                <td class="text-center">{{ employee.nom }}</td>
+                <td class="text-center">{{ employee.cin }}</td>
+                <td class="text-center">{{ employee.idSage }}</td>
+                <td class="text-center">{{ employee.adresseEmail }}</td>
+             
+              
+    
+                <td class="text-center">
+                  <button *ngIf="employee.password" cButton color="primary" variant="ghost" shape="rounded-pill" (click)="RedirectToAccountTable(employee)"><svg cIcon name="cilList" ></svg></button>
+                  <button *ngIf="!showAddAccountForm && !employee.password " cButton color="success" variant="ghost" shape="rounded-pill" (click)="toggleAccountInputs(employee)"><svg cIcon name="cilPlus" ></svg></button> 
+                  <button *ngIf="showAddAccountForm" cButton color="success" variant="ghost" shape="rounded-pill" (click)="addAccount(employee)"><svg cIcon name="cilCheckAlt" ></svg></button>
+                </td>
+              </tr>
+            
+             </ng-container>
+            
+            </tbody>
+          </table>
+        </div>
+        
+        <!-- *ngIf="showAddAccountForm"    *ngIf="selectedEmployee" -->
+        
+        <div  style="display: flex; justify-content: flex-end;  width: 100%;" >
+          <form *ngIf="showAddAccountForm">
+            <!-- <label for="password">Password:</label>
+            <input type="password" id="password" name="password" [(ngModel)]="password"  placeholder="Enter password"> -->
+            <c-input-group class="mb-3" >
+              <input aria-describedby="button-addon2 " id="password" name="password" [(ngModel)]="password"
+                     aria-label=""
+                     cFormControl
+                     placeholder="Mot de passe"
+              />
+              <button cButton color="secondary" id="button-addon2" type="button" variant="outline" (click)="generatePassword()">
+               Générer 
+              </button>
+            </c-input-group>
+            <select aria-label="Small select example" id="role" name="role" [(ngModel)]="role" cSelect sizing="sm">
+              <option>Rôle</option>
+              <option value="Employee">Employé</option>
+              <option value="Supervisor">Supérviseur</option>
+              <option value="HrOfficer">Agent RH</option>
+              <option value="Trainer">Formateur</option>
+            </select>
+            
+          </form>
+          
+        </div>
+      </div>
+  
+    </c-col>
+  </c-row>
+
+</div>
+
+<div *ngIf="!showMenu && activeTable === 'accounts' " >
+  <c-row>
+    <div class="three">
+      <h1 >Comptes utilisateurs</h1>
+    </div>
+  </c-row>
+  <c-row >
+    <c-col>
+
+       
+        <div>
+          
+          <ng-container *ngIf="selectedEmployee2 === null">
+            <button cButton color="success" variant="ghost" shape="rounded-pill" ><svg cIcon name="cilPlus" ></svg></button>
+            <c-dropdown direction="dropend" variant="btn-group">
+            <button cButton  variant="ghost" cDropdownToggle>
+              <svg cIcon name="cilZoom" ></svg>         
+              {{ 
+                selectedFilter === 'searchTextUserName' ? "Rechercher par Nom d'utilisateur ":
+          
+                 'Rechercher par' }}
+            </button>
+            <ul cDropdownMenu>
+        
+              <li><button cDropdownItem (click)="setSelectedFilter('searchTextName')">Nom d'utilisateur'</button></li>
+           
+            </ul>
+            </c-dropdown>
+            <input *ngIf="selectedFilter === 'searchTextUserName'" type="text" [(ngModel)]="searchTextUserName" id="searchTextUserName" class="search-input" placeholder="Nom d'utilisateur">
+          </ng-container>
+          
+         
+          <div *ngIf="selectedEmployee2 != null" style =" width: 20%">
+            <div >
+              <a  href="javascript:void(0);" (click)="redirectToAllAccounts()" ><i class='bx bx-arrow-back' style="font-size: 30px;" ></i></a>
+            </div>
+            <!-- <button cButton  variant="ghost" (click)="redirectToAllAccounts()"> Tout les comptes</button> -->
+          </div>
+        </div>
+        <table  class="table project-list-table table-nowrap align-middle table-borderless"  id="table2 " style="font-size: small; " cTable>
+          <thead>
+            <tr>
+              <th cTableColor="info" class="text-center" *ngFor="let detailCompte of detailsCompte">
+                <span class="header-text">{{ detailCompte }}</span>
+              </th>
+              <th cTableColor="info" class="text-center">Compte</th>
+            </tr>
+          </thead>
+          <tbody>
+            <ng-container *ngFor="let employee of employees | filter: searchTextName:searchTextIdSage :searchTextCin : searchTextUserName 
+            ">
+              <tr  *ngIf="!selectedEmployee2 || selectedEmployee2 === employee" > 
+  
+              <td class="text-center">{{ employee.prenom }}</td>
+              <td class="text-center">{{ employee.nom }}</td>
+              <td class="text-center">{{ employee.userName }}</td>
+              <td class="text-center">{{ employee.roleName }}</td>
+  
+              <td class="text-center">
+                <button cButton color="warning" variant="ghost" shape="rounded-pill" (click)="resetPassword(employee)"><svg cIcon name="cilReload" ></svg></button>
+                 <button cButton color="primary" variant="ghost" shape="rounded-pill" ><svg cIcon name="cilPencil" ></svg></button> 
+                <button cButton color="danger" variant="ghost" shape="rounded-pill" ><svg cIcon name="cilX" ></svg></button>
+               
+              </td>
+            </tr>
+            </ng-container>
+            
+          </tbody>
+        </table>
+  
+    
+    </c-col>
+  </c-row>
+</div>
+
