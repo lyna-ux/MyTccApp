@@ -197,8 +197,19 @@
      
             <td class="text-center">
             <div style="display: flex;">
-              <div><button cButton color="primary" variant="ghost" shape="rounded-pill" ><svg cIcon name="cilPencil" ></svg></button> </div>
-              <div><button cButton color="danger" variant="ghost" shape="rounded-pill" (click)="deleteEmployee(employee.cin)" ><svg cIcon name="cilX" ></svg></button></div>
+              <div>
+                <a href="javascript:void(0);" (click)="showFormUpdateTable()" >
+                  <svg cIcon name="cilPencil" ></svg>
+                </a> 
+              </div>
+              <div>
+                <a  *ngIf="employee.statut=='Inactif'" href="javascript:void(0);" (click)="showFormUpdateTable()" class="badge badge-soft-success mb-0" style="margin-left: 15px;" >
+                  Réactiver
+                </a>
+                <a *ngIf="employee.statut=='Actif'" href="javascript:void(0);" (click)="showFormUpdateTable()" class="badge badge-soft-dark mb-0"style="margin-left: 15px;" >
+                  Désactiver
+                </a>
+              </div>
             </div>
             </td>
           </tr>
@@ -365,7 +376,7 @@
             </div>
             <div class="card-body">
               <div class="d-flex flex-column align-items-center text-center">
-              <img src="./assets/img/avatars/8.jpg" alt="Admin" class="rounded-circle" width="150">
+              <img src="./assets/img/avatars/3.jpg" alt="Admin" class="rounded-circle" width="150">
     
               
             
@@ -495,7 +506,7 @@
               <h6 class="mb-0">Poste</h6>
               </div>
               <div class="col-sm-9 ">
-           
+           Formateur
               </div>
                 </div>
                 <hr>
@@ -505,7 +516,7 @@
                   <h6 class="mb-0">Opération</h6>
                   </div>
                   <div class="col-sm-9 ">
-                    {{employee.operation}}
+                    Manageo
                   </div>
                 </div>
                 <hr>
@@ -517,18 +528,18 @@
                   <c-row  style="padding-bottom: 20px;">
                     <c-col [md]="4"  >
                       <label class="form-label" [ngClass]="{'active': nom}" for="nom">Nom</label>
-                      <input class="form-control "  id="nom" name="nom" [(ngModel)]="nom" type="text"  />
+                      <input class="form-control "  id="nom" name="nom"  value='{{employee.nom}}' type="text"  />
                     </c-col>
                 
                     <c-col [md]="4" >
                       <label class="form-label" for="prenom"  [ngClass]="{'active': prenom}"  >Prénom</label>
-                      <input class="form-control " id="prenom" name="prenom" [(ngModel)]="prenom" type="text" > 
+                      <input class="form-control " id="prenom" name="prenom" value='{{employee.prenom}}' type="text" > 
                     <c-col/>
                 
                     </c-col>
                     <c-col [md]="3" >
                       <label class="form-label"  for="cin" [ngClass]="{'active': cin}">CIN</label>
-                      <input class="form-control " id="cin" name="cin" [(ngModel)]="cin" type="text"  >
+                      <input class="form-control " id="cin" name="cin" value='{{employee.cin}}' type="text"  >
                 
                     </c-col>
                 
@@ -537,19 +548,19 @@
               <c-row  style="padding-bottom: 20px;">
                 <c-col [md]="3" >
                   <label class="form-label" for="dateNaissance">Date de naissance</label>
-                  <input  class="form-control " id="dateNaissance" name="dateNaissance" [(ngModel)]="dateNaissance" type="date" />
+                  <input  class="form-control " id="dateNaissance" name="dateNaissance" value='{{employee.dateNaissance}}' type="date" />
                 </c-col>
                   
                     <c-col [md]="6" >
                       <label  class="form-label" for="genre">Genre</label>
-                      <select class="form-control form-select" id="genre" name="genre" [(ngModel)]="genre"   >
+                      <select class="form-control form-select" id="genre" name="genre" value='{{employee.genre}}'   >
                         <option class="input-option" value="Masculin">Homme</option>
                         <option class="input-option" value="Feminin">Femme</option>
                       </select>
                     </c-col>
                     <c-col [md]="3" >
                       <label  class="form-label" for="situationFamiliale">Situation Familiale</label>
-                      <select class="form-control form-select"  id="situationFamiliale"name="situationFamiliale" [(ngModel)]="situationFamiliale">
+                      <select class="form-control form-select"  id="situationFamiliale"name="situationFamiliale" value='{{employee.situationFamiliale}}' >
                         <option value="Celibataire" >Célibataire</option>
                         <option  value="Marie">Marié(e)</option>
                         <option>Divorcé(e)</option>
@@ -560,7 +571,7 @@
               <c-row  style="padding-bottom: 20px;">
                 <c-col [xs]="8" >
                   <label  class="form-label" for="adresse" [ngClass]="{'active': adresse}">Adresse</label>
-                  <input class="form-control " id="adresse"name="adresse" [(ngModel)]="adresse"  />
+                  <input class="form-control " id="adresse"name="adresse" value='{{employee.adresse}}'  />
                 </c-col>
                 <c-col [md]="2" >
                   <label class="form-label" for="ville" [ngClass]="{'active': ville}">Ville</label>
@@ -574,13 +585,13 @@
               <c-row  style="padding-bottom: 20px;">
                 <c-col [md]="6">
                   <label class="form-label" for="adresseEmail"  [ngClass]="{'active': adresseEmail}">Adresse Email</label>
-                  <input class="form-control " id="adresseEmail"name="adresseEmail" [(ngModel)]="adresseEmail"  type="email" />
+                  <input class="form-control " id="adresseEmail"name="adresseEmail" value='{{employee.adresseEmail}}'  type="email" />
           
                 </c-col>
           
                 <c-col [md]="6" >
                   <label class="form-label" for="tel" [ngClass]="{'active': tel}">Tel</label>
-                  <input class="form-control " id="tel"name="tel" [(ngModel)]="tel"  type="text"   />
+                  <input class="form-control " id="tel"name="tel" value='{{employee.tel}}'  type="text"   />
                 </c-col>
               </c-row>
               <c-row  style="padding-bottom: 20px;">
@@ -588,12 +599,12 @@
                 <c-col [md]="6" >
                   <label class="form-label" for="dateEntree" [ngClass]="{'active': dateEntree}">Date d'entrée</label>
           
-                  <input class="form-control " id="dateEntree" name="dateEntree" [(ngModel)]="dateEntree" type="date" />
+                  <input class="form-control " id="dateEntree" name="dateEntree" value='{{employee.dateEntree}}' type="date" />
                 
                 </c-col>
                 <c-col [md]="6" >
                   <label class="form-label" for="idSage" [ngClass]="{'active': idSage}">Matricule Sage</label>
-                  <input class="form-control " id="idSage" name="idSage" [(ngModel)]="idSage" type="text"   />
+                  <input class="form-control " id="idSage" name="idSage" value='{{employee.idSage}}' type="text"   />
                   
                   
                 </c-col>
@@ -602,13 +613,13 @@
               <c-row  style="padding-bottom: 20px;">
                 <c-col [md]="6" >
                   <label class="form-label" for="operation" [ngClass]="{'active': operation}">Opération</label>
-                  <input class="form-control " id="operation" name="idSage" [(ngModel)]="operation" type="text"   />
+                  <input class="form-control " id="operation" name="operation" value='Manageo' type="text"   />
                   
                   
                 </c-col>
                 <c-col [md]="6" >
                   <label class="form-label" for="poste" [ngClass]="{'active': poste}" >Poste</label>
-                  <input class="form-control "  id="poste" name="idSage" [(ngModel)]="poste" type="text"  />
+                  <input class="form-control "  id="poste" name="poste"  value='Foramteur' type="text"  />
                   
                 
                 </c-col>
@@ -860,7 +871,7 @@
                               </div>
                           </div>
                           <div style="padding: 10px;"><strong>Poste</strong> Formateur </div>
-                          <div style="padding: 10px;"><strong>Date d'entrée à TCC</strong> :20-12-2020 </div>
+                          <div style="padding: 10px;"><strong>Date d'entrée à TCC</strong> :22-09-2023 </div>
 
                           
                        
@@ -910,7 +921,7 @@
                             </div>
                         </div>
                         <div style="padding: 10px;"><strong>Poste</strong> Formateur</div>
-                        <div style="padding: 10px;"><strong>Date d'entrée à TCC</strong> :20-12-2020</div>
+                        <div style="padding: 10px;"><strong>Date d'entrée à TCC</strong> :22-09-2023</div>
   
                     </div>
                     
@@ -989,7 +1000,7 @@
                                   <tr > 
                                      <td class="text-center"><span  [class]="getStatusBadgeClass(demande.statut)" >{{demande.statut}} </span></td>
                                      <td class="text-center ">{{demande.dateDepot}}</td>
-                                     <td class="text-center " >{{demande.dateTraitement}}</td>
+                                     <td class="text-center " >22-09-2023</td>
                                      <td class="text-center">{{demande.commentaireTraitement}}</td>
                                     <td class="text-center">{{demande.prenomTraitant}} {{demande.nomTraitant}}</td>
                                   </tr>
@@ -1019,8 +1030,8 @@
                                    
                                   <tr > 
                                      <td class="text-center"><span  [class]="getStatusBadgeClass(demande.statut)" >{{demande.statut}} </span></td>
-                                     <td class="text-center "> 18-05-2023 </td>
-                                     <td class="text-center"> 19-05-2023 </td>
+                                     <td class="text-center "> 18-09-2023 </td>
+                                     <td class="text-center"> 22-09-2023 </td>
                                   </tr>
                      
                               

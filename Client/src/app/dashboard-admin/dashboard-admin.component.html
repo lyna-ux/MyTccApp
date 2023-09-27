@@ -170,9 +170,11 @@
               
     
                 <td class="text-center">
-                  <button *ngIf="employee.password" cButton color="primary" variant="ghost" shape="rounded-pill" (click)="RedirectToAccountTable(employee)"><svg cIcon name="cilList" ></svg></button>
-                  <button *ngIf="!showAddAccountForm && !employee.password " cButton color="success" variant="ghost" shape="rounded-pill" (click)="toggleAccountInputs(employee)"><svg cIcon name="cilPlus" ></svg></button> 
-                  <button *ngIf="showAddAccountForm" cButton color="success" variant="ghost" shape="rounded-pill" (click)="addAccount(employee)"><svg cIcon name="cilCheckAlt" ></svg></button>
+                  <a *ngIf="employee.password" href="javascript:void(0)" (click)="RedirectToAccountTable(employee)"><i class="fa fa-eye"></i></a>
+              
+                  <a *ngIf="!employee.password && !showAddAccountForm"  href="javascript:void(0)" (click)="toggleAccountInputs(employee)"><svg cIcon name="cilPlus" ></svg></a> 
+               
+                  <a *ngIf="showAddAccountForm"   href="javascript:void(0)" (click)="addAccount(employee)">Valider</a>
                 </td>
               </tr>
             

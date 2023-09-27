@@ -321,8 +321,8 @@ export class DashboardHrOfficerComponent implements OnInit {
     badge: this.badge,
     // refPlanningWeek: '0817',
     logRef: '0817',
-    opération: this.operation,
-    poste:this.poste,
+    opération: "Manageo",
+    poste:"Formateur",
     };
   
     if (addUserDto) {
@@ -335,7 +335,6 @@ export class DashboardHrOfficerComponent implements OnInit {
           this.employees.push(response);
           this.getEmployees();
           this.toastr.success("Employé"+" "+this.prenom+" "+this.nom +" "+"ajouté avec succées!");
-          this.showAddForm = false;
 
              // Reset the form fields
         this.idSage = 0;
@@ -434,6 +433,11 @@ deleteEmployee(cin: string) {
      this.infoList=false;
      this.updateForm=true;
   }
+
+  showFormUpdateTable(){
+    this.showEmployees=false;
+    this.updateForm=true;
+ }
 
   cancleFormUpdate(){
     this.infoList=true;
@@ -623,6 +627,17 @@ deleteEmployee(cin: string) {
       'En cours': 'badge badge-soft-warning mb-0',
       'Traitée': 'badge badge-soft-success mb-0',
       'Annulée': 'badge badge-soft-dark mb-0',
+      // Add more mappings as needed
+    };
+
+    return statusClasses[statut] || 'badge badge-soft-secondary mb-0';
+  }
+
+  getStatusBadgeClassEmployee(statut: string): string {
+    const statusClasses: { [key: string]: string } = {
+      'Actif': 'badge badge-soft-warning mb-0',
+      'Inactif': 'badge badge-soft-success mb-0',
+    
       // Add more mappings as needed
     };
 

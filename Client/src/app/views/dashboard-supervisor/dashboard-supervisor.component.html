@@ -291,9 +291,9 @@
 
         <div style="display: flex;">
           <!-- *ngIf="!showPlanningUser && !employee.refPlanningWeek " -> cdt du premier boutton -->
-          <div><button  cButton color="success" variant="ghost" shape="rounded-pill"(click)="toggleAddPlanningUser(employee)"><svg cIcon name="cilPlus" ></svg></button></div>
-          <button *ngIf="showAddPlanningUser" cButton color="success" variant="ghost" shape="rounded-pill" (click)="AssignPlanning(employee.cin, selectedRefPlanning)"><svg cIcon name="cilCheckAlt" ></svg></button>
-          <div><button *ngIf="employee.refPlanningWeek"  cButton color="primary" variant="ghost" shape="rounded-pill" (click)="getPlanning(employee.refPlanningWeek);togglePlanningUser(employee)"> <svg cIcon name="cil-calendar" ></svg></button></div>
+          <div><a  href="javascript:void(0)" *ngIf="!employee.refPlanningWeek && !showAddPlanningUser" (click)="toggleAddPlanningUser(employee)"><svg cIcon name="cilPlus" ></svg></a></div>
+          <a  href="javascript:void(0)" *ngIf="showAddPlanningUser"  (click)="AssignPlanning(employee.cin, selectedRefPlanning)"><svg cIcon name="cilCheckAlt" ></svg></a>
+          <div><a  href="javascript:void(0)" *ngIf="employee.refPlanningWeek"   (click)="getPlanning(employee.refPlanningWeek);togglePlanningUser(employee)"> <svg cIcon name="cil-calendar" ></svg></a></div>
         </div>
         </td>
       </tr>
@@ -468,30 +468,29 @@
      
         </div>
       
-        <div  >
-          
-            <input type="time" formControlName="Début_S1" cFormControl />
+        <div style="margin-bottom: 10px;" >
             <span for="Début_S1" >Début séance 1</span>
+            <input type="time" formControlName="Début_S1" class="form-control" />
+           
           
       
-         
-            <input  type="time" formControlName="Fin_S1" class="form-control" />
             <span for="Fin_S1" >Fin séance 1</span>
-        
+            <input  type="time" formControlName="Fin_S1" class="form-control" />
+          
       
-         
-            <input type="time" formControlName="startTime2" class="form-control" />
             <span for="startTime2" >Début séance 2</span>
-   
-            <input type="time" formControlName="endTime2" class="form-control" />
+            <input type="time" formControlName="startTime2" class="form-control" />
+            
             <span for="endTime2" >Fin séance 2</span>
+            <input type="time" formControlName="endTime2" class="form-control" />
+            
        
-
-            <input type="text" id="RefPlanningWeek" class="form-control" />
             <span for="RefPlanningWeek" >Référence Planning</span>
+            <input type="text" id="RefPlanningWeek" class="form-control" />
+           
      
-        </div>
-        <button class="btn btn-outline-secondary" (click)="createTable(); addNewWeek()">Valider</button>
+        </div >
+        <button  style="margin-right: 5px;" class="btn btn-outline-secondary" (click)="createTable(); addNewWeek()">Valider</button>
           <button  class="btn btn-outline-secondary"   (click)="CancelNewPlanningUserForm()">Annuler</button>
     </form>
     </div>

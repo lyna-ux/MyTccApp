@@ -100,6 +100,7 @@ public CurrentUserId :number | undefined;
 public CurrentUserRefPlanningWeek :string ='';
 
 
+
 public totalConnectionTime = 0;
 public totalConnectionTimeStr:string ='';
   
@@ -157,7 +158,7 @@ public totalConnectionTimeStr:string ='';
       console.log(`Total connection time: ${formattedTime}`);
       console.log(this.totalConnectionTimeStr);
       console.log(this.logOnTrackStr[1].toString());
-      console.log(this.logOffTrackStr[1].toString());
+      //console.log(this.logOffTrackStr[1].toString());
     }
     
   consoleLogs(){

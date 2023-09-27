@@ -97,7 +97,8 @@ export class DefaultHeaderComponent extends HeaderComponent implements OnInit {
   }
 
    addLog(){
-    this.logService.totalConnection();
+ this.logService.totalConnection();
+    //console.log(this.logService.totalConnectionTimeStr)
     console.log(this.logService.totalConnectionTimeStr)
       const addLogDto=
       {
@@ -113,8 +114,10 @@ export class DefaultHeaderComponent extends HeaderComponent implements OnInit {
             LogOffTimeS1:this.logService.LogOffTimeS1 ,
             LogOnTimeS2 : this.logService.LogOnTimeS2 ,
             LogOffTimeS2 : this.logService.LogOffTimeS2 ,
-            LogDurationStr: this.logService.totalConnectionTimeStr,
-            LogDurationNbr :this.logService.totalConnectionTime,
+            LogDurationStr: "2",
+            LogDurationNbr :2,
+            // LogDurationStr: this.logService.totalConnectionTimeStr,
+            // LogDurationNbr :this.logService.totalConnectionTime,
             logType: "Production",
             refPlanningWeek: this.currentUser.refPlanningWeek,
       }
